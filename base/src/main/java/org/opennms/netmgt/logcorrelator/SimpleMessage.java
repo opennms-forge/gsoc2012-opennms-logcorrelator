@@ -5,26 +5,26 @@ import java.util.Map;
 
 public class SimpleMessage implements Message {
 
-	private Map<String, Object> headers;
+	private Map<String, String> headers;
 
 	private String body;
 
 	public SimpleMessage() {
-		this.headers = new HashMap<String, Object>();
+		this.headers = new HashMap<String, String>();
 	}
 
 	@Override
-	public Map<String, Object> getHeaders() {
+	public Map<String, String> getHeaders() {
 		return this.headers;
 	}
 
 	@Override
-	public Object getHeader(String name) {
+	public String getHeader(String name) {
 		return this.headers.get(name);
 	}
 
 	@Override
-	public void setHeader(String name, Object value) {
+	public void setHeader(String name, String value) {
 		this.headers.put(name, value);
 	}
 
@@ -36,5 +36,26 @@ public class SimpleMessage implements Message {
 	@Override
 	public void setBody(String body) {
 		this.body = body;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("SimpleMessage[");
+
+		for (String name : this.headers.keySet()) {
+			sb.append(name);
+			sb.append("=\"");
+			sb.append(this.headers.get(name));
+			sb.append("\"");
+			sb.append(", ");
+		}
+
+		sb.append(this.body);
+
+		sb.append("]");
+
+		return sb.toString();
 	}
 }

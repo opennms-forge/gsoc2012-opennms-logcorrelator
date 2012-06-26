@@ -17,42 +17,39 @@ public interface SyslogParser {
 
 	public final static String HEADER_HOST = "host";
 
-	public final static String HEADER_TAG = "tag";
+	public final static String FACILITIES[] = new String[] {
+		"KERNEL",
+		"USER",
+		"MAIL",
+		"SYSTEM",
+		"SECURITY",
+		"SYSLOG",
+		"PRINTER",
+		"NETWORK",
+		"UUCP",
+		"CLOCK",
+		"FTP",
+		"NTP",
+		"LOCAL_0",
+		"LOCAL_1",
+		"LOCAL_2",
+		"LOCAL_3",
+		"LOCAL_4",
+		"LOCAL_5",
+		"LOCAL_6",
+		"LOCAL_7"
+	};
 
-	public static enum Facility {
-
-		KERNEL,
-		USER,
-		MAIL,
-		SYSTEM,
-		SECURITY,
-		SYSLOG,
-		PRINTER,
-		NETWORK,
-		UUCP,
-		CLOCK,
-		FTP,
-		NTP,
-		LOCAL_0,
-		LOCAL_1,
-		LOCAL_2,
-		LOCAL_3,
-		LOCAL_4,
-		LOCAL_5,
-		LOCAL_6,
-		LOCAL_7
-	}
-
-	public static enum Severity {
-		EMERGENCY,
-		ALERT,
-		CRITICAL,
-		ERROR,
-		WARNING,
-		NOTICE,
-		INFORMATIONAL,
-		DEBUG
-	}
+	public final static String SEVERITIES[] = new String[] {
+		"EMERGENCY",
+		"ALERT",
+		"CRITICAL",
+		"ERROR",
+		"WARNING",
+		"NOTICE",
+		"INFORMATIONAL",
+		"DEBUG"
+	};
 
 	public Message parse(final String syslogMessage);
 }

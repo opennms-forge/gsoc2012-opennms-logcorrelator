@@ -22,11 +22,11 @@ public interface Message extends Serializable {
 	 *
 	 * @return the header
 	 */
-	public abstract Map<String, Object> getHeaders();
+	public abstract Map<String, String> getHeaders();
 
-	public abstract Object getHeader(final String name);
+	public abstract String getHeader(final String name);
 
-	public abstract void setHeader(final String name, final Object value);
+	public abstract void setHeader(final String name, final String value);
 
 	/**
 	 * Returns the body of the log message.
