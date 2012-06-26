@@ -29,6 +29,8 @@
         <module>preprocessors.static</module>
         <module>receivers.syslog</module>
         <module>receivers.netty</module>
+        <module>correlators.nop</module>
+        <module>correlators.opennms</module>
     </modules>
 
     <build>
