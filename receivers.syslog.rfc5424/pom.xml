@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<relativePath>../poms/compiled/</relativePath>
+		<groupId>org.opennms.logcorrelator.build</groupId>
+		<artifactId>compiled-bundle-settings</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<bundle.symbolicName>org.opennms.logcorrelator.receivers.syslog.rfc5424</bundle.symbolicName>
+		<bundle.namespace>org.opennms.netmgt.logcorrelator.receivers.syslog.rfc5424</bundle.namespace>
+	</properties>
+
+	<groupId>org.opennms.logcorrelator</groupId>
+	<artifactId>opennms-logcorrelator-receivers-syslog-rfc5424</artifactId>
+
+	<name>OpenNMS Log Correlator - Receivers - Syslog - RFC 5424</name>
+
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.opennms.logcorrelator</groupId>
+			<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Parsing -->
+		<dependency>
+			<groupId>se.romanredz.mouse</groupId>
+			<artifactId>mouse-runtime</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>se.romanredz.mouse</groupId>
+			<artifactId>mouse</artifactId>
+			<version>1.5.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- OSGi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<mkdir dir="${project.build.directory}/generated-sources/mouse/org/opennms/netmgt/logcorrelator/receivers/syslog/rfc5424/mouse"/>
+								<java classname="mouse.Generate"
+                                      fork="true"
+                                      failonerror="true">
+									<arg value="-G" />
+									<arg value="src/main/mouse/rfc5424.peg" />
+
+									<arg value="-P" />
+									<arg value="Parser" />
+
+									<arg value="-S" />
+									<arg value="Semantics" />
+
+									<arg value="-D" />
+									<arg value="${project.build.directory}/generated-sources/mouse/org/opennms/netmgt/logcorrelator/receivers/syslog/rfc5424/mouse" />
+
+									<arg value="-p" />
+									<arg value="org.opennms.netmgt.logcorrelator.receivers.syslog.rfc5424.mouse" />
+
+									<arg value="-r" />
+									<arg value="mouse.runtime" />
+
+									<classpath>
+										<pathelement path="${maven.dependency.se.romanredz.mouse.mouse.jar.path}"/>
+										<pathelement path="${maven.dependency.se.romanredz.mouse.mouse-runtime.jar.path}"/>
+										<pathelement path="${java.class.path}"/>
+									</classpath>
+								</java>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/mouse</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

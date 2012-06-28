@@ -1,10 +1,10 @@
 package org.opennms.netmgt.logcorrelator.core;
 
 import java.util.List;
-import org.opennms.netmgt.logcorrelator.Message;
-import org.opennms.netmgt.logcorrelator.MessageProcessor;
-import org.opennms.netmgt.logcorrelator.Preprocessor;
-import org.opennms.netmgt.logcorrelator.Processor;
+import org.opennms.netmgt.logcorrelator.api.Message;
+import org.opennms.netmgt.logcorrelator.api.MessageProcessor;
+import org.opennms.netmgt.logcorrelator.api.Preprocessor;
+import org.opennms.netmgt.logcorrelator.api.Processor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +26,7 @@ public class MessageProcessorImpl extends MessageProcessor {
 
 	@Override
 	public void process(final Message message) {
-		logger.debug("Processing message: {}", message);
+		logger.info("Processing message: {}", message);
 
 		this.processorChain.process(message);
 	}

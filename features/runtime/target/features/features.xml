@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features name="opennms-logcorrelator-runtime" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+    <feature description="OpenNMS Log Correlator - Features - Runtime" version="1.0.0-SNAPSHOT" name="opennms-logcorrelator-runtime">
+        <details></details>
+        <feature>opennms-logcorrelator-api</feature>
+        <feature>opennms-logcorrelator-core</feature>
+        <feature>opennms-logcorrelator-receivers-syslog</feature>
+        <feature>opennms-logcorrelator-preprocessors-static</feature>
+        <feature>opennms-logcorrelator-correlators-nop</feature>
+    </feature>
+</features>

@@ -3,7 +3,7 @@ package org.opennms.netmgt.logcorrelator.receivers.syslog;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.oneone.OneToOneDecoder;
-import org.opennms.netmgt.logcorrelator.Message;
+import org.opennms.netmgt.logcorrelator.api.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,7 +34,7 @@ public class SyslogServerDecoder extends OneToOneDecoder {
 			return message;
 		}
 
-		logger.debug("Syslog message received: {}", message);
+		logger.info("Syslog message received: {}", message);
 
 		return this.parser.parse((String) message);
 	}

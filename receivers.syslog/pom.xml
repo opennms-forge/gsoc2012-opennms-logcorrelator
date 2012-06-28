@@ -1,260 +1,66 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.opennms.logcorrelator</groupId>
-		<artifactId>opennms-logcorrelator</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<relativePath>../poms/compiled/</relativePath>
+		<groupId>org.opennms.logcorrelator.build</groupId>
+		<artifactId>compiled-bundle-settings</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+
+	<properties>
+		<bundle.symbolicName>org.opennms.logcorrelator.receivers.syslog</bundle.symbolicName>
+		<bundle.namespace>org.opennms.netmgt.logcorrelator.receivers.syslog</bundle.namespace>
+	</properties>
 
 	<groupId>org.opennms.logcorrelator</groupId>
 	<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
 
-	<packaging>jar</packaging>
-
 	<name>OpenNMS Log Correlator - Receivers - Syslog</name>
 
-	<description></description>
-
-	<url>http://www.OpenNMS.org</url>
-
-	<repositories>
-		<repository>
-			<id>internal</id>
-			<name>DoITNext Release Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>internal</id>
-			<name>DoITNext Release Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>org.opennms.logcorrelator</groupId>
+			<artifactId>opennms-logcorrelator-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.opennms.logcorrelator</groupId>
 			<artifactId>opennms-logcorrelator-receivers-netty</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
-	<!-- Parsing -->
+		<!-- OSGi -->
 		<dependency>
-			<groupId>com.doitnext</groupId>
-			<artifactId>mouse-mvn</artifactId>
-			<version>1.5.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.doitnext</groupId>
-			<artifactId>mouse-rt-mvn</artifactId>
-			<version>1.5.0.1-SNAPSHOT</version>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
 		</dependency>
 
-    <!-- Testing -->
+		<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-    <!-- Logging -->
+		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.4</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.0.4</version>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<mkdir dir="${project.build.directory}/generated-sources/mouse/org/opennms/netmgt/logcorrelator/receivers/syslog/rfc5424/mouse"/>
-								<java classname="com.doitnext.mouse.Generate"
-									  fork="true"
-									  failonerror="true">
-									<arg value="-G" />
-									<arg value="src/main/mouse/rfc5424.peg" />
-
-									<arg value="-P" />
-									<arg value="Parser" />
-
-									<arg value="-S" />
-									<arg value="Semantics" />
-
-									<arg value="-D" />
-									<arg value="${project.build.directory}/generated-sources/mouse/org/opennms/netmgt/logcorrelator/receivers/syslog/rfc5424/mouse" />
-
-									<arg value="-p" />
-									<arg value="org.opennms.netmgt.logcorrelator.receivers.syslog.rfc5424.mouse" />
-
-									<arg value="-r" />
-									<arg value="com.doitnext.mouse.runtime" />
-
-									<classpath>
-										<pathelement path="${maven.dependency.com.doitnext.mouse-mvn.jar.path}"/>
-										<pathelement path="${maven.dependency.com.doitnext.mouse-rt-mvn.jar.path}"/>
-										<pathelement path="${java.class.path}"/>
-									</classpath>
-								</java>
-							</target>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.build.directory}/generated-sources/mouse</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-<!--
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>java</goal>
-						</goals>
-						<configuration>
-							<mainClass>com.doitnext.mouse.Generate</mainClass>
-							<arguments>
-								<argument>-G</argument>
-								<argument>src/main/mouse/RFC5424.mouse</argument>
-
-								<argument>-P</argument>
-								<argument>Parser</argument>
-
-								<argument>-S</argument>
-								<argument>Semantics</argument>
-
-								<argument>-D</argument>
-								<argument>${project.build.directory}/generated-sources/mouse</argument>
-
-								<argument>-p</argument>
-								<argument>org.opennms.netmgt.logcorrelator.receivers.syslog.RFC5424.mouse</argument>
-
-								<argument>-r</argument>
-								<argument>com.doitnext.mouse</argument>
-
-								<argument>-s</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
-
-<!--
-			<plugin>
-				<groupId>com.doitnext</groupId>
-				<artifactId>mouse-plugin-mvn</artifactId>
-				<version>1.5.0.1-SNAPSHOT</version>
-				<executions>
-					<execution>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>touch</goal>
-						</goals>
-						<configuration>
-							<targets>
-								<target>
-									<targetDirectory>${project.build.directory}/generated-sources/mouse</targetDirectory>
-									<grammarFile>src/main/mouse/RFC5424.mouse</grammarFile>
-									<parserClassName>Parser</parserClassName>
-									<semanticsClassName>Semantics</semanticsClassName>
-									<parserPackageName>org.opennms.netmgt.logcorrelator.receivers.syslog.RFC5424.mouse</parserPackageName>
-								</target>
-							</targets>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
-
-			<!--
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<taskdef name="beaver" classname="beaver.comp.run.AntTask" classpathref="maven.compile.classpath"/>
-
-								<mkdir dir="${project.build.directory}/generated-sources/beaver"/>
-								<beaver file             = "src/main/beaver/RFC5424.grammar"
-										destdir          = "${project.build.directory}/generated-sources/beaver"
-										compress         = "yes"
-										exportTables     = "no"
-										sortTerminals    = "no"
-										terminalNames    = "no"
-										exportTerminals  = "no"
-										useSwitch        = "no"
-										anonymousActions = "yes"
-										reportActions    = "no" />
-							</target>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			-->
-		</plugins>
-	</build>
 </project>

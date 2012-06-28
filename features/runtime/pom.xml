@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.opennms.logcorrelator.features</groupId>
+		<artifactId>opennms-logcorrelator</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.opennms.logcorrelator.features</groupId>
+	<artifactId>opennms-logcorrelator-runtime</artifactId>
+
+	<name>OpenNMS Log Correlator - Features - Runtime</name>
+
+	<packaging>pom</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.opennms.maven.plugins</groupId>
+				<artifactId>features-maven-plugin</artifactId>
+				<configuration>
+					<features>
+						<feature>opennms-logcorrelator-api</feature>
+            <feature>opennms-logcorrelator-core</feature>
+            <feature>opennms-logcorrelator-receivers-syslog</feature>
+            <feature>opennms-logcorrelator-preprocessors-static</feature>
+            <feature>opennms-logcorrelator-correlators-nop</feature>
+					</features>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+    
+    <!-- Features -->
+    <!--
+		<dependency>
+			<groupId>org.opennms.logcorrelator.features</groupId>
+			<artifactId>opennms-logcorrelator-api</artifactId>
+			<version>${project.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+		</dependency>
+		<dependency>
+			<groupId>org.opennms.logcorrelator.features</groupId>
+			<artifactId>opennms-logcorrelator-core</artifactId>
+			<version>${project.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+		</dependency>
+		<dependency>
+			<groupId>org.opennms.logcorrelator.features</groupId>
+			<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
+			<version>${project.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+		</dependency>
+		<dependency>
+			<groupId>org.opennms.logcorrelator.features</groupId>
+			<artifactId>opennms-logcorrelator-preprocessors-static</artifactId>
+			<version>${project.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+		</dependency>
+		<dependency>
+			<groupId>org.opennms.logcorrelator.features</groupId>
+			<artifactId>opennms-logcorrelator-correlators-nop</artifactId>
+			<version>${project.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+		</dependency>
+    -->
+	</dependencies>
+</project>

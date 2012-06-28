@@ -6,7 +6,7 @@ import org.jboss.netty.bootstrap.ConnectionlessBootstrap;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.socket.DatagramChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioDatagramChannelFactory;
-import org.opennms.netmgt.logcorrelator.Receiver;
+import org.opennms.netmgt.logcorrelator.api.Receiver;
 
 public abstract class SyslogReceiver extends Receiver {
 

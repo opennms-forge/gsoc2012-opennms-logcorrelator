@@ -1,6 +1,6 @@
 package org.opennms.netmgt.logcorrelator.receivers.syslog;
 
-import org.opennms.netmgt.logcorrelator.Message;
+import org.opennms.netmgt.logcorrelator.api.Message;
 
 /**
  * Interface for sys log message parsers.

@@ -1,50 +1,71 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.opennms.logcorrelator</groupId>
-    <artifactId>opennms-logcorrelator</artifactId>
+  <groupId>org.opennms.logcorrelator</groupId>
+  <artifactId>opennms-logcorrelator</artifactId>
 
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<name>OpenNMS Log Correlator</name>
+  <name>OpenNMS Log Correlator</name>
 
-    <description>
-    </description>
+  <description>
+  </description>
 
-    <url>http://www.OpenNMS.org</url>
+  <url>http://www.OpenNMS.org</url>
 
-    <properties>
-        <jdkLevel>1.6</jdkLevel>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <properties>
+    <jdkLevel>1.6</jdkLevel>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-		<version>1.0-SNAPSHOT</version>
-    </properties>
+  <modules>
+    <module>poms</module>
+    <!-- <module>features</module> -->
 
-    <modules>
-        <module>base</module>
-        <module>core</module>
-        <module>correlators.drools</module>
-        <module>preprocessors.static</module>
-        <module>receivers.syslog</module>
-        <module>receivers.netty</module>
-        <module>correlators.nop</module>
-        <module>correlators.opennms</module>
-    </modules>
+    <module>api</module>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <source>${jdkLevel}</source>
-                    <target>${jdkLevel}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <module>core</module>
 
+    <module>receivers.netty</module>
+    <module>receivers.syslog</module>
+    <module>receivers.syslog.rfc5424</module>
+
+    <module>preprocessors.regex</module>
+
+    <module>correlators.opennms</module>
+    <module>correlators.nop</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <source>${jdkLevel}</source>
+          <target>${jdkLevel}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.ops4j</groupId>
+        <artifactId>maven-pax-plugin</artifactId>
+        <version>1.5</version>
+        <inherited>false</inherited>
+        <configuration>
+          <provision>
+            <param>--platform=felix</param>
+            <param>scan-bundle:mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.boot/2.2.7</param>
+            <param>scan-features:mvn:org.apache.karaf.assemblies.features/standard/2.2.7/xml/features!/karaf-framework,http-whiteboard</param>
+            <param>--noConsole</param>
+          </provision>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

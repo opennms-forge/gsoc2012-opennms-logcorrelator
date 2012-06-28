@@ -1,0 +1,40 @@
+Message = Header " " StructuredData ( " " Body )? !_ ;
+
+
+
+Header = "<" Pri ">" Version " " Timestamp " " Hostname " " Application " " ProcId " " MsgId ;
+
+Pri = ( [0-9] [0-9]? [0-9]? ) {&pri};
+
+Version = ( [1-9] [0-9]* ) {&version};
+
+Timestamp = "-" / Text {&timestamp};
+
+Hostname = "-" / Text {&hostname};
+
+Application = "-" / Text {&application};
+
+ProcId = "-" / Text {&processId};
+
+MsgId = "-" / Text {&messageId};
+
+
+
+StructuredData = "-" / StructuredDataElement+ ;
+
+StructuredDataElement = "[" StructuredDataName ( " " StructuredDataName "=\"" StructuredDataParamValue "\"" )* "]" {&structuredDataElement};
+
+StructuredDataParamValue = StructuredDataParamValueChar* {&structuredDataParamValue};
+
+StructuredDataParamValueChar = StructuredDataParamValueCharEscape / (![\"\\\]] _) ;
+StructuredDataParamValueCharEscape = "\\\\" / "\\\"" / "\\]" ;
+
+StructuredDataName = ( ![ =\"\[\]] _ )* ;
+
+
+
+Body = ( _* ) {&body};
+
+
+
+Text = [\u0021-\u007e]+ ;
