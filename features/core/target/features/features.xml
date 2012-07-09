@@ -3,6 +3,6 @@
     <feature description="OpenNMS Log Correlator - Features - Core" version="1.0.0-SNAPSHOT" name="opennms-logcorrelator-core">
         <details></details>
         <feature>opennms-logcorrelator-api</feature>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-core/1.0.0-SNAPSHOT</bundle>
+        <bundle start-level="100">mvn:org.opennms.logcorrelator/opennms-logcorrelator-core/1.0.0-SNAPSHOT</bundle>
     </feature>
 </features>

@@ -3,8 +3,9 @@
     <feature description="OpenNMS Log Correlator - Features - Receivers - Syslog" version="1.0.0-SNAPSHOT" name="opennms-logcorrelator-receivers-syslog">
         <details></details>
         <feature>opennms-logcorrelator-api</feature>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog-rfc5424/1.0.0-SNAPSHOT</bundle>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog/1.0.0-SNAPSHOT</bundle>
+        <bundle>mvn:io.netty/netty/3.5.1.Final</bundle>
         <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-netty/1.0.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog/1.0.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog-rfc5424/1.0.0-SNAPSHOT</bundle>
     </feature>
 </features>

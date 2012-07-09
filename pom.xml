@@ -24,7 +24,7 @@
 
   <modules>
     <module>poms</module>
-    <!-- <module>features</module> -->
+    <module>features</module>
 
     <module>api</module>
 
@@ -52,6 +52,7 @@
         </configuration>
       </plugin>
 
+        <!--
       <plugin>
         <groupId>org.ops4j</groupId>
         <artifactId>maven-pax-plugin</artifactId>
@@ -59,13 +60,18 @@
         <inherited>false</inherited>
         <configuration>
           <provision>
-            <param>--platform=felix</param>
+            <param>- -platform=felix</param>
+            <param>- -shell=karaf.shell</param>
+            <param>- -log=INFO</param>
+            <!- - 
             <param>scan-bundle:mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.boot/2.2.7</param>
             <param>scan-features:mvn:org.apache.karaf.assemblies.features/standard/2.2.7/xml/features!/karaf-framework,http-whiteboard</param>
-            <param>--noConsole</param>
+            <param>- -noConsole</param>
+             - ->
           </provision>
         </configuration>
       </plugin>
+       -->
     </plugins>
   </build>
 </project>

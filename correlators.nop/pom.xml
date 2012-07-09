@@ -38,7 +38,7 @@
 		<!-- OSGi -->
 		<dependency>
 			<groupId>org.osgi</groupId>
-			<artifactId>osgi_R4_core</artifactId>
+			<artifactId>org.osgi.core</artifactId>
 		</dependency>
 
 		<!-- Testing -->
@@ -52,16 +52,16 @@
 			<artifactId>easymock</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
+    
+    <!-- Logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
 	</dependencies>
 
 </project>

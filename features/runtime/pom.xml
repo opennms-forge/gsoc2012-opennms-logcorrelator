@@ -34,46 +34,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-    
-    <!-- Features -->
-    <!--
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-api</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-core</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-preprocessors-static</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-correlators-nop</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-    -->
-	</dependencies>
 </project>

@@ -22,11 +22,9 @@
 				<groupId>org.opennms.maven.plugins</groupId>
 				<artifactId>features-maven-plugin</artifactId>
 				<configuration>
-					<!--
-					<features>
-						<feature>vaadin</feature>
-					</features>
-					-->
+					<bundles>
+						<bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-api/${project.version}</bundle>
+					</bundles>
 				</configuration>
 			</plugin>
 		</plugins>

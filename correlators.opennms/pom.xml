@@ -32,16 +32,15 @@
 
 		<!-- OpenNMS -->
 		<dependency>
-			<groupId>org.opennms.core.snmp</groupId>
-			<artifactId>org.opennms.core.snmp.api</artifactId>
+			<groupId>org.opennms</groupId>
+			<artifactId>opennms-services</artifactId>
 			<version>1.11.1-SNAPSHOT</version>
-		 <type>jar</type>
 		</dependency>
 
 		<!-- OSGi -->
 		<dependency>
 			<groupId>org.osgi</groupId>
-			<artifactId>osgi_R4_core</artifactId>
+			<artifactId>org.osgi.core</artifactId>
 		</dependency>
 
 		<!-- Testing -->
@@ -54,16 +53,6 @@
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
 		</dependency>
 	</dependencies>
 

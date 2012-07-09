@@ -1,12 +1,11 @@
 package org.opennms.netmgt.logcorrelator.preprocessors.regex;
 
 import junit.framework.TestCase;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.replay;
 import org.junit.Test;
-
-import static org.easymock.EasyMock.*;
-
-import org.opennms.netmgt.logcorrelator.api.Preprocessor;
 import org.opennms.netmgt.logcorrelator.api.Message;
+import org.opennms.netmgt.logcorrelator.api.Preprocessor;
 import org.opennms.netmgt.logcorrelator.api.SimpleMessage;
 
 

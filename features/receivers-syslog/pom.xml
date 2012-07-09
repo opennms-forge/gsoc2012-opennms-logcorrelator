@@ -25,37 +25,14 @@
 					<features>
 						<feature>opennms-logcorrelator-api</feature>
 					</features>
+					<bundles>
+            <bundle>mvn:io.netty/netty/3.5.1.Final</bundle>
+						<bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-netty/${project.version}</bundle>
+            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog/${project.version}</bundle>
+            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-receivers-syslog-rfc5424/${project.version}</bundle>
+					</bundles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-receivers-syslog-rfc5424</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-receivers-netty</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-    
-    <!-- Features -->
-    <!--
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-api</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		-->
-	</dependencies>
 </project>

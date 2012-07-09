@@ -1,40 +1,20 @@
 package org.opennms.netmgt.logcorrelator.receivers.syslog;
 
-import java.net.InetSocketAddress;
-import java.util.concurrent.Executors;
-import org.jboss.netty.bootstrap.ConnectionlessBootstrap;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.socket.DatagramChannelFactory;
-import org.jboss.netty.channel.socket.nio.NioDatagramChannelFactory;
-import org.opennms.netmgt.logcorrelator.api.Receiver;
+import org.jboss.netty.channel.ChannelPipelineFactory;
+import org.opennms.netmgt.logcorrelator.receivers.netty.NettyReceiver;
 
-public abstract class SyslogReceiver extends Receiver {
 
-	private final SyslogParser parser = this.createSyslogParser();
+public abstract class SyslogReceiver extends NettyReceiver {
 
-	private final ConnectionlessBootstrap bootstrap;
+  public SyslogReceiver(final String host, final int port) {
+    super(host, port);
+  }
+  
+  @Override
+  protected final ChannelPipelineFactory createPipelineFactory() {
+    return new SyslogServerPipelineFactory(this.createSyslogParser());
+  }
+  
+  protected abstract SyslogParser createSyslogParser();
 
-	private Channel channel;
-
-	public SyslogReceiver() {
-		final DatagramChannelFactory datagramChannelFactory = new NioDatagramChannelFactory(
-				Executors.newCachedThreadPool());
-
-		this.bootstrap = new ConnectionlessBootstrap(datagramChannelFactory);
-		this.bootstrap.setPipelineFactory(
-				new SyslogServerPipelineFactory(this.parser));
-	}
-
-	@Override
-	public final void start() {
-		this.channel = this.bootstrap.bind(new InetSocketAddress(10514));
-	}
-
-	@Override
-	public final void stop() {
-		this.channel.close();
-
-	}
-
-	protected abstract SyslogParser createSyslogParser();
 }

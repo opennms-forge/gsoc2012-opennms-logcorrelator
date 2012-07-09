@@ -1,8 +1,6 @@
 package org.opennms.netmgt.logcorrelator.api;
 
-public abstract class MessageProcessor {
+public abstract class MessageProcessor extends Processor {
 
-	public static MessageProcessor instance;
-
-	public abstract void process(final Message message);
+    public abstract void process(final Message message);
 }

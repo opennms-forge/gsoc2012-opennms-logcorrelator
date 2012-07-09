@@ -25,27 +25,11 @@
 					<features>
 						<feature>opennms-logcorrelator-api</feature>
 					</features>
+          <bundles>
+            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-core/${project.version}@100</bundle>
+          </bundles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-    
-    <!-- Features -->
-    <!--
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-api</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-    -->
-	</dependencies>
 </project>

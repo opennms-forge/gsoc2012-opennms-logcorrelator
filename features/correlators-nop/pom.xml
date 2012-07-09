@@ -25,32 +25,15 @@
 					<features>
 						<feature>opennms-logcorrelator-api</feature>
 					</features>
+          <bundles>
+            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-opennms/${project.version}</bundle>
+            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-nop/${project.version}</bundle>
+						
+						<bundle>mvn:org.opennms/opennms-model/1.11.1-SNAPSHOT</bundle>
+						<bundle>mvn:javax.persistence/persistence-api/1.0.2</bundle>
+          </bundles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-correlators-nop</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.opennms.logcorrelator</groupId>
-			<artifactId>opennms-logcorrelator-correlators-opennms</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-    
-    <!-- Features -->
-    <!-- 
-		<dependency>
-			<groupId>org.opennms.logcorrelator.features</groupId>
-			<artifactId>opennms-logcorrelator-api</artifactId>
-			<version>${project.version}</version>
-      <classifier>features</classifier>
-      <type>xml</type>
-		</dependency>
-		 -->
-	</dependencies>
 </project>
