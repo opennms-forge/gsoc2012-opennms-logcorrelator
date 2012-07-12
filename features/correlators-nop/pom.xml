@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xmlns="http://maven.apache.org/POM/4.0.0"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -24,14 +25,12 @@
 				<configuration>
 					<features>
 						<feature>opennms-logcorrelator-api</feature>
+						<feature>opennms-logcorrelator-support</feature>
 					</features>
-          <bundles>
-            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-opennms/${project.version}</bundle>
-            <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-nop/${project.version}</bundle>
-						
-						<bundle>mvn:org.opennms/opennms-model/1.11.1-SNAPSHOT</bundle>
-						<bundle>mvn:javax.persistence/persistence-api/1.0.2</bundle>
-          </bundles>
+					<bundles>
+						<bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-opennms/${project.version}</bundle>
+						<bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-correlators-nop/${project.version}</bundle>
+					</bundles>
 				</configuration>
 			</plugin>
 		</plugins>

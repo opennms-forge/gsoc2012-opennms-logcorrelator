@@ -21,6 +21,7 @@
 	<modules>
 		<module>api</module>
 		<module>core</module>
+		<module>support</module>
 		<module>receivers-syslog</module>
 		<module>preprocessors-static</module>
 		<module>correlators-nop</module>
