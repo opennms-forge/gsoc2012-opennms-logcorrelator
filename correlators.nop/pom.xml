@@ -32,6 +32,12 @@
 			<groupId>org.opennms.logcorrelator</groupId>
 			<artifactId>opennms-logcorrelator-correlators-opennms</artifactId>
 			<version>${project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- Testing -->

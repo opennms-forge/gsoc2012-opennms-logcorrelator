@@ -25,7 +25,6 @@
 		</dependency>
 
 		<!-- OpenNMS -->
-    <!--
 		<dependency>
 			<groupId>org.opennms</groupId>
 			<artifactId>opennms-model</artifactId>
@@ -34,6 +33,10 @@
 				<exclusion>
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.javassist</groupId>
+					<artifactId>javassist</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -46,9 +49,12 @@
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-log4j12</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>org.javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
-    -->
 
 		<!-- Testing -->
 		<dependency>
