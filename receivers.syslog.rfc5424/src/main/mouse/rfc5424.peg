@@ -20,7 +20,7 @@ MsgId = "-" / Text {&messageId};
 
 
 
-StructuredData = "-" / StructuredDataElement+ ;
+StructuredData = "-" / StructuredDataElement+ {&structuredData};
 
 StructuredDataElement = "[" StructuredDataName ( " " StructuredDataName "=\"" StructuredDataParamValue "\"" )* "]" {&structuredDataElement};
 

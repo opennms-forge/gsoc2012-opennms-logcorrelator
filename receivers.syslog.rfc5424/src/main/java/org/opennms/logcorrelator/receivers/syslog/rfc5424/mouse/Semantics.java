@@ -2,6 +2,8 @@ package org.opennms.logcorrelator.receivers.syslog.rfc5424.mouse;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import mouse.runtime.SemanticsBase;
@@ -90,17 +92,29 @@ public class Semantics extends SemanticsBase {
     return true;
   }
 
+  final Map<String, Map<String, String>> structuredData = new HashMap<String, Map<String, String>>();
+
+  boolean structuredData() {
+
+    this.message.set(this.receiver.STRUCTURED_DATA,
+                     this.structuredData);
+
+    return true;
+  }
+
   boolean structuredDataElement() {
-//    final String base = rhs(1).text();
-//
-//    for (int i = 3; i < rhsSize(); i += 5) {
-//      final String key = rhs(i + 0).text();
-//      final String value = (String) rhs(i + 2).get();
-//
-//      final String name = base + "." + key;
-//
-//      this.message.set(accessor, value);
-//    }
+    final String base = rhs(1).text();
+
+    Map<String, String> structuredElement = new HashMap<String, String>();
+    this.structuredData.put(base,
+                            structuredElement);
+
+    for (int i = 3; i < rhsSize(); i += 5) {
+      final String key = rhs(i + 0).text();
+      final String value = (String) rhs(i + 2).get();
+
+      structuredElement.put(key, value);
+    }
 
     return true;
   }
