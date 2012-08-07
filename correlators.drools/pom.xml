@@ -34,7 +34,7 @@
       <version>${project.version}</version>
 			<exclusions>
 				<exclusion>
-					<groupId>org.javassist</groupId>
+					<groupId>javassist</groupId>
 					<artifactId>javassist</artifactId>
 				</exclusion>
 			</exclusions>

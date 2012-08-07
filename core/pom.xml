@@ -29,6 +29,19 @@
       <version>12.0.1</version>
     </dependency>
     
+    <!-- Code generation -->
+    <dependency>
+      <groupId>org.javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.16.1-GA</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>stringtemplate</artifactId>
+      <version>4.0.2</version>
+    </dependency>
+    
     <!-- LogCorrelator -->
     <dependency>
       <groupId>org.opennms.logcorrelator</groupId>
@@ -46,12 +59,24 @@
       <artifactId>opennms-logcorrelator-correlators-nop</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.opennms.logcorrelator</groupId>
       <artifactId>opennms-logcorrelator-correlators-drools</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.opennms.logcorrelator</groupId>
@@ -70,19 +95,6 @@
       <artifactId>opennms-logcorrelator-receivers-syslog-rfc5424</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
-    </dependency>
-    
-    <!-- Code generation -->
-    <dependency>
-      <groupId>org.javassist</groupId>
-      <artifactId>javassist</artifactId>
-      <version>3.16.1-GA</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>org.antlr</groupId>
-      <artifactId>stringtemplate</artifactId>
-      <version>4.0.2</version>
     </dependency>
 
     <!-- Testing -->
