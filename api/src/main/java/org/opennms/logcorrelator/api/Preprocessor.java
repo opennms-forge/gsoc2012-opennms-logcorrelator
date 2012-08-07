@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Dustin Frisch <fooker@lab.sh>
  */
-public final class Preprocessor implements PipelineProcessor, MessageDeclarationProvider {
+public class Preprocessor implements PipelineProcessor, MessageDeclarationProvider {
   private final Logger logger = LoggerFactory.getLogger(Preprocessor.class);
 
   private final String id;
