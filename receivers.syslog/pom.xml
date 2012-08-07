@@ -5,23 +5,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<relativePath>../poms/compiled/</relativePath>
-		<groupId>org.opennms.logcorrelator.build</groupId>
-		<artifactId>compiled-bundle-settings</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+    <groupId>org.opennms.logcorrelator</groupId>
+    <artifactId>opennms-logcorrelator</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<properties>
-		<bundle.symbolicName>org.opennms.logcorrelator.receivers.syslog</bundle.symbolicName>
-		<bundle.namespace>org.opennms.netmgt.logcorrelator.receivers.syslog</bundle.namespace>
-	</properties>
-
-	<groupId>org.opennms.logcorrelator</groupId>
 	<artifactId>opennms-logcorrelator-receivers-syslog</artifactId>
 
 	<name>OpenNMS Log Correlator - Receivers - Syslog</name>
 
-	<packaging>bundle</packaging>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
@@ -33,12 +26,6 @@
 			<groupId>org.opennms.logcorrelator</groupId>
 			<artifactId>opennms-logcorrelator-receivers-netty</artifactId>
 			<version>${project.version}</version>
-		</dependency>
-
-		<!-- OSGi -->
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
 		</dependency>
 
 		<!-- Testing -->

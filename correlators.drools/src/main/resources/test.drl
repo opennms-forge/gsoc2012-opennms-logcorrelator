@@ -1,0 +1,15 @@
+package test;
+
+import org.opennms.logcorrelator.impl.MessageImpl;
+
+
+dialect "java"
+
+
+rule "test"
+  no-loop
+when
+  $m : MessageImpl(body == "lalala")
+then
+  System.out.println("Whäwhäwhäwhäwhäwhä: " + $m);
+end

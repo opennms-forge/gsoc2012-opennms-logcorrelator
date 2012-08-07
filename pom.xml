@@ -23,21 +23,21 @@
   </properties>
 
   <modules>
-    <module>poms</module>
-    <module>features</module>
-
     <module>api</module>
-
     <module>core</module>
+    <module>config</module>
 
     <module>receivers.netty</module>
     <module>receivers.syslog</module>
     <module>receivers.syslog.rfc5424</module>
 
-    <module>preprocessors.regex</module>
+		<module>filters.mvel</module>
+
+    <module>preprocessors.simple</module>
 
     <module>correlators.opennms</module>
     <module>correlators.nop</module>
+    <module>correlators.drools</module>
   </modules>
 
   <build>
@@ -51,27 +51,67 @@
           <target>${jdkLevel}</target>
         </configuration>
       </plugin>
-
-        <!--
-      <plugin>
-        <groupId>org.ops4j</groupId>
-        <artifactId>maven-pax-plugin</artifactId>
-        <version>1.5</version>
-        <inherited>false</inherited>
-        <configuration>
-          <provision>
-            <param>- -platform=felix</param>
-            <param>- -shell=karaf.shell</param>
-            <param>- -log=INFO</param>
-            <!- - 
-            <param>scan-bundle:mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.boot/2.2.7</param>
-            <param>scan-features:mvn:org.apache.karaf.assemblies.features/standard/2.2.7/xml/features!/karaf-framework,http-whiteboard</param>
-            <param>- -noConsole</param>
-             - ->
-          </provision>
-        </configuration>
-      </plugin>
-       -->
     </plugins>
   </build>
+  
+  <dependencyManagement>
+    <dependencies>
+      <!-- Testing -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymock</artifactId>
+        <version>3.0</version>
+        <scope>test</scope>
+      </dependency>
+ 
+      <!-- Logging -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.6.4</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.0.6</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <repositories>
+    <repository>
+      <id>opennms-repo</id>
+      <name>OpenNMS Repository</name>
+      <url>http://maven.opennms.org/content/groups/opennms.org-release</url>
+  
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+  
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  
+    <repository>
+      <id>opennms-snapshots</id>
+      <name>OpenNMS Snapshot Maven Repository</name>
+      <url>http://maven.opennms.org/content/groups/opennms.org-snapshot</url>
+  
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+  
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
 </project>

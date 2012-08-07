@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features name="opennms-logcorrelator-preprocessors-static" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
-    <feature description="OpenNMS Log Correlator - Features - Preprocessors - Static" version="1.0.0-SNAPSHOT" name="opennms-logcorrelator-preprocessors-static">
-        <details></details>
-        <feature>opennms-logcorrelator-api</feature>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-preprocessors-regex/1.0.0-SNAPSHOT</bundle>
-    </feature>
-</features>

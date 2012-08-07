@@ -1,0 +1,30 @@
+group message;
+
+constructor(declaration) ::= <<
+public <declaration.accessorClass>() {
+}
+>>
+
+getFieldName(declaration) ::= <<
+public final String getFieldName() {
+  return "<declaration.name>";
+}
+>>
+
+getFieldType(declaration) ::= <<
+public final Class getFieldType() {
+  return <declaration.typeClass>.class;
+}
+>>
+
+get(declaration) ::= <<
+public final Object get(<declaration.messageClass> message) {
+  return ((<declaration.messageImplementationClass>) message).<declaration.readMethod>();
+}
+>>
+
+set(declaration) ::= <<
+public final void set(<declaration.messageClass> message, Object value) {
+  ((<declaration.messageImplementationClass>) message).<declaration.writeMethod>((<declaration.typeClass>) value);
+}
+>>

@@ -1,0 +1,17 @@
+group message;
+
+fields() ::= <<
+private final java.util.HashMap fields = new java.util.HashMap();
+>>
+
+getter(declaration) ::= <<
+public final <declaration.typeClass> <declaration.readMethod>() {
+  return (<declaration.typeClass>) this.fields.get("<declaration.name>");
+}
+>>
+
+setter(declaration) ::= <<
+public final void <declaration.writeMethod>(<declaration.typeClass> value) {
+  this.fields.put("<declaration.name>", value);
+}
+>>

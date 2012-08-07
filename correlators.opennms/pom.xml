@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xmlns="http://maven.apache.org/POM/4.0.0"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<relativePath>../poms/compiled/</relativePath>
-		<groupId>org.opennms.logcorrelator.build</groupId>
-		<artifactId>compiled-bundle-settings</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+    <groupId>org.opennms.logcorrelator</groupId>
+    <artifactId>opennms-logcorrelator</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<properties>
-		<bundle.symbolicName>org.opennms.logcorrelator.correlators.opennms</bundle.symbolicName>
-		<bundle.namespace>org.opennms.netmgt.logcorrelator.correlators.opennms</bundle.namespace>
-	</properties>
-
-	<groupId>org.opennms.logcorrelator</groupId>
 	<artifactId>opennms-logcorrelator-correlators-opennms</artifactId>
 
 	<name>OpenNMS Log Correlator - Correlators - OpenNMS Support</name>
 
-	<packaging>bundle</packaging>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
@@ -31,17 +25,30 @@
 		</dependency>
 
 		<!-- OpenNMS -->
+    <!--
+		<dependency>
+			<groupId>org.opennms</groupId>
+			<artifactId>opennms-model</artifactId>
+			<version>1.11.2-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.opennms</groupId>
 			<artifactId>opennms-services</artifactId>
-			<version>1.11.1-SNAPSHOT</version>
+			<version>1.11.2-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
-		<!-- OSGi -->
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-		</dependency>
+    -->
 
 		<!-- Testing -->
 		<dependency>

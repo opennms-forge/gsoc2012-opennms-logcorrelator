@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features name="opennms-logcorrelator-api" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
-    <feature description="OpenNMS Log Correlator - Features - API" version="1.0.0-SNAPSHOT" name="opennms-logcorrelator-api">
-        <details></details>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-api/1.0.0-SNAPSHOT</bundle>
-        <bundle>mvn:org.opennms.logcorrelator/opennms-logcorrelator-api/1.0.0-SNAPSHOT</bundle>
-    </feature>
-</features>
