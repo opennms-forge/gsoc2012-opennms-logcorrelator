@@ -10,6 +10,7 @@ import mouse.runtime.SemanticsBase;
 import org.opennms.logcorrelator.api.Message;
 import org.opennms.logcorrelator.receivers.syslog.SyslogMessageFacility;
 import org.opennms.logcorrelator.receivers.syslog.SyslogMessageSeverity;
+import org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogMessageStructuredData;
 import org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver;
 
 
@@ -92,7 +93,7 @@ public class Semantics extends SemanticsBase {
     return true;
   }
 
-  final Map<String, Map<String, String>> structuredData = new HashMap<String, Map<String, String>>();
+  final Rfc5424SyslogMessageStructuredData structuredData = new Rfc5424SyslogMessageStructuredData();
 
   boolean structuredData() {
 
@@ -105,7 +106,7 @@ public class Semantics extends SemanticsBase {
   boolean structuredDataElement() {
     final String base = rhs(1).text();
 
-    Map<String, String> structuredElement = new HashMap<String, String>();
+    final Map<String, String> structuredElement = new HashMap<String, String>();
     this.structuredData.put(base,
                             structuredElement);
 

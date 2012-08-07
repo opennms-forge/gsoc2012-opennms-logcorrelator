@@ -59,7 +59,7 @@ public class Rfc5424SyslogParserTest {
     messageMock.set(receiverMock.PROCESS_ID, "opennms");
     messageMock.set(receiverMock.MESSAGE_ID, "42");
 
-    Capture<Map<String, Map<String, String>>> structuredData = new Capture<Map<String, Map<String, String>>>();
+    Capture<Rfc5424SyslogMessageStructuredData> structuredData = new Capture<Rfc5424SyslogMessageStructuredData>();
     messageMock.set(same(receiverMock.STRUCTURED_DATA),
                     capture(structuredData));
 

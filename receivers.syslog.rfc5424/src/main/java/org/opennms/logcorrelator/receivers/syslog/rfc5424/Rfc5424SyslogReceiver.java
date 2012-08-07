@@ -1,6 +1,5 @@
 package org.opennms.logcorrelator.receivers.syslog.rfc5424;
 
-import java.util.Map;
 import org.opennms.logcorrelator.api.MessageAccessor;
 import org.opennms.logcorrelator.api.MessageDeclarator;
 import org.opennms.logcorrelator.api.MessageFactory;
@@ -16,7 +15,7 @@ public class Rfc5424SyslogReceiver extends SyslogReceiver {
 
   public MessageAccessor<String> PROCESS_ID;
 
-  public MessageAccessor<Map<String, Map<String, String>>> STRUCTURED_DATA;
+  public MessageAccessor<Rfc5424SyslogMessageStructuredData> STRUCTURED_DATA;
   
   public MessageAccessor<String> MESSAGE_ID;
 
@@ -46,6 +45,7 @@ public class Rfc5424SyslogReceiver extends SyslogReceiver {
     this.APPLICATION = declarator.registerField("application", String.class);
     this.PROCESS_ID = declarator.registerField("processId", String.class);
     this.MESSAGE_ID = declarator.registerField("messageId", String.class);
+    this.STRUCTURED_DATA = declarator.registerField("structuredData", Rfc5424SyslogMessageStructuredData.class);
   }
 
   public MessageFactory getMessageFactory() {
