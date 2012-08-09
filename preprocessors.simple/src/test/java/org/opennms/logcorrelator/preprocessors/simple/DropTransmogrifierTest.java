@@ -8,7 +8,7 @@ import org.opennms.logcorrelator.api.Preprocessor;
 import org.opennms.logcorrelator.api.Transmogrifier;
 
 
-public class DropPreprocessorTest extends TestCase {
+public class DropTransmogrifierTest extends TestCase {
 
   @Override
   protected void setUp() throws Exception {

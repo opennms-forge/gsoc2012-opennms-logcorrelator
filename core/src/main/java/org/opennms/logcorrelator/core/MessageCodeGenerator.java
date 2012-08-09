@@ -69,9 +69,14 @@ public final class MessageCodeGenerator {
   private final static Logger logger = LoggerFactory.getLogger(MessageCodeGenerator.class);
 
   /**
-   * The package of the message implementation class.
+   * The package name of the message implementation class.
    */
   public static final String PACKAGE_NAME = "org.opennms.logcorrelator.impl";
+  
+  /**
+   * The class name of the message implementation class.
+   */
+  public static final String CLASS_NAME = "MessageImpl";
 
   /**
    * The template group used for message class generation.
@@ -112,17 +117,24 @@ public final class MessageCodeGenerator {
       this.classPool.importPackage(MessageCodeGenerator.PACKAGE_NAME);
 
       // Define message implementation class
-      this.messageClass = this.classPool.makeClass(MessageCodeGenerator.PACKAGE_NAME + "." + "MessageImpl");
+      this.messageClass = this.classPool.makeClass(MessageCodeGenerator.PACKAGE_NAME + "." + CLASS_NAME);
 
       // Let class implement the message interface
       this.messageClass.setSuperclass(ClassPool.getDefault().get(AbstractMessage.class.getName()));
 
-      // Define default constructor
-      this.messageClass.addConstructor(CtNewConstructor.defaultConstructor(this.messageClass));
-
       // Define implementions field storage
-      final ST stImplMap = messageTemplateGroup.getInstanceOf("fields");
-      this.messageClass.addField(CtField.make(stImplMap.render(), this.messageClass));
+      final ST stImplFields = messageTemplateGroup.getInstanceOf("fields");
+      this.messageClass.addField(CtField.make(stImplFields.render(), this.messageClass));
+
+      // Define default constructor
+      final ST stImplDefaultConstructor = messageTemplateGroup.getInstanceOf("defaultConstructor");
+      stImplDefaultConstructor.add("class", CLASS_NAME);
+      this.messageClass.addConstructor(CtNewConstructor.make(stImplDefaultConstructor.render(), this.messageClass));
+      
+      // Define copy constructor
+      final ST stImplCopyConstructor = messageTemplateGroup.getInstanceOf("copyConstructor");
+      stImplCopyConstructor.add("class", CLASS_NAME);
+      this.messageClass.addConstructor(CtNewConstructor.make(stImplCopyConstructor.render(), this.messageClass));
 
     } catch (Exception ex) {
       logger.error("Failed to create code", ex);

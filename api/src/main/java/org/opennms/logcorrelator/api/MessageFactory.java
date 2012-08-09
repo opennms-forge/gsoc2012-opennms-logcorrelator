@@ -21,4 +21,13 @@ public interface MessageFactory {
    * @return the message
    */
   public abstract Message createMessage();
+  
+  /**
+   * Creates a copy of the given message.
+   * 
+   * @param message the message to copy
+   * 
+   * @return the copied message
+   */
+  public abstract Message copy(final Message message);
 }

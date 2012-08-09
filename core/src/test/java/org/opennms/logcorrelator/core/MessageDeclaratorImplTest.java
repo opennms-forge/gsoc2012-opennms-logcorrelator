@@ -1,6 +1,5 @@
 package org.opennms.logcorrelator.core;
 
-import org.opennms.logcorrelator.core.MessageDeclaratorImpl;
 import java.lang.reflect.Method;
 import org.junit.After;
 import static org.junit.Assert.*;

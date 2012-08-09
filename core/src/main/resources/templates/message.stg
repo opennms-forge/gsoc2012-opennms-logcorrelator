@@ -1,7 +1,19 @@
 group message;
 
 fields() ::= <<
-private final java.util.HashMap fields = new java.util.HashMap();
+private final java.util.HashMap fields;
+>>
+
+defaultConstructor(class) ::= <<
+public <class>() {
+  this.fields = new java.util.HashMap();
+}
+>>
+
+copyConstructor(class) ::= <<
+public <class>(<class> message) {
+  this.fields = new java.util.HashMap(message.fields);
+}
 >>
 
 getter(declaration) ::= <<
