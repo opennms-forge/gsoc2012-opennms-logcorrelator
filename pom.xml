@@ -34,7 +34,6 @@
 		<module>filters.mvel</module>
 
     <module>preprocessors.simple</module>
-    <module>preprocessors.opennms</module>
 
     <module>correlators.opennms</module>
     <module>correlators.nop</module>
