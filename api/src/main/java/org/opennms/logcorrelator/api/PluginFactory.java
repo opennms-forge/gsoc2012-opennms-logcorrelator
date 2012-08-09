@@ -55,7 +55,8 @@ public class PluginFactory {
     final Class<? extends ReceiverFactory> factoryClass = Class.forName(config.getType()).asSubclass(ReceiverFactory.class);
     final ReceiverFactory factory = factoryClass.newInstance();
 
-    return factory.create(messageFactory,
+    return factory.create(config.getId(),
+                          messageFactory,
                           pipeline,
                           config);
   }

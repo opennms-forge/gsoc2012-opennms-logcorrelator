@@ -16,16 +16,18 @@ public class Rfc5424SyslogReceiver extends SyslogReceiver {
   public MessageAccessor<String> PROCESS_ID;
 
   public MessageAccessor<Rfc5424SyslogMessageStructuredData> STRUCTURED_DATA;
-  
+
   public MessageAccessor<String> MESSAGE_ID;
 
   private final MessageFactory messageFactory;
 
-  public Rfc5424SyslogReceiver(final MessageFactory messageFactory,
+  public Rfc5424SyslogReceiver(final String id,
+                               final MessageFactory messageFactory,
                                final Pipeline pipeline,
                                final String host,
                                final int port) {
-    super(pipeline,
+    super(id,
+          pipeline,
           host,
           port);
 
@@ -51,4 +53,5 @@ public class Rfc5424SyslogReceiver extends SyslogReceiver {
   public MessageFactory getMessageFactory() {
     return this.messageFactory;
   }
+
 }

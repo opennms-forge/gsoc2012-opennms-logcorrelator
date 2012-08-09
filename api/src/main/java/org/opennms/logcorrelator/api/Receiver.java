@@ -11,4 +11,9 @@ package org.opennms.logcorrelator.api;
  */
 public interface Receiver extends MessageDeclarationProvider, Plugin {
 
+  /**
+   * Returns the ID of the receiver.
+   */
+  public abstract String getId();
+
 }

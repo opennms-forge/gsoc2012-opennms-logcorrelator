@@ -21,10 +21,12 @@ public abstract class SyslogReceiver extends NettyReceiver {
 
   private final Pipeline pipeline;
 
-  public SyslogReceiver(final Pipeline pipeline,
+  public SyslogReceiver(final String id,
+                        final Pipeline pipeline,
                         final String host,
                         final int port) {
-    super(host,
+    super(id,
+          host,
           port);
 
     this.pipeline = pipeline;

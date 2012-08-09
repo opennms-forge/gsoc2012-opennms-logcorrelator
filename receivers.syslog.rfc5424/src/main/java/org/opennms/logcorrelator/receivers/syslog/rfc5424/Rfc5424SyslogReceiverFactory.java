@@ -9,13 +9,15 @@ import org.opennms.logcorrelator.config.ReceiverConfiguration;
 
 public class Rfc5424SyslogReceiverFactory implements ReceiverFactory {
   @Override
-  public Receiver create(final MessageFactory messageFactory,
+  public Receiver create(final String id,
+                         final MessageFactory messageFactory,
                          final Pipeline pipeline,
                          final ReceiverConfiguration configuration) {
     final String host = configuration.getProperties().getProperty("host");
     final int port = Integer.parseInt(configuration.getProperties().getProperty("port"));
 
-    return new Rfc5424SyslogReceiver(messageFactory,
+    return new Rfc5424SyslogReceiver(id,
+                                     messageFactory,
                                      pipeline,
                                      host,
                                      port);

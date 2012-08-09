@@ -10,7 +10,7 @@ package org.opennms.logcorrelator.api;
  * @author Dustin Frisch <fooker@lab.sh>
  */
 public interface Plugin {
-
+  
   /**
    * Initialize the plugin.
    */

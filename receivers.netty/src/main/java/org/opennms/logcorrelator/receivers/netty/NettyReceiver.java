@@ -11,6 +11,8 @@ import org.opennms.logcorrelator.api.Receiver;
 
 
 public abstract class NettyReceiver implements Receiver {
+  private final String id;
+
   private final String host;
 
   private final int port;
@@ -19,10 +21,17 @@ public abstract class NettyReceiver implements Receiver {
 
   private Channel channel;
 
-  public NettyReceiver(final String host,
+  public NettyReceiver(final String id,
+                       final String host,
                        final int port) {
+    this.id = id;
     this.host = host;
     this.port = port;
+  }
+
+  @Override
+  public final String getId() {
+    return this.id;
   }
 
   @Override
