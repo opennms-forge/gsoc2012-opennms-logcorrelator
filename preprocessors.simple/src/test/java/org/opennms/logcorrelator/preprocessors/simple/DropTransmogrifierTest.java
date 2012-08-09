@@ -20,15 +20,15 @@ public class DropTransmogrifierTest extends TestCase {
 
   @Test
   public void testDropping() throws Exception {
-    final Preprocessor preprocessor = createMock(Preprocessor.class);
+    final Transmogrifier.Context context = createMock(Transmogrifier.Context.class);
     
     final Message message = createMock(Message.class);
 
     final Transmogrifier transmogrifier = new DropTransmogrifier();
 
-    replay(preprocessor, message);
-    transmogrifier.transmogrify(preprocessor, message);
-    verify(preprocessor, message);
+    replay(context, message);
+    transmogrifier.transmogrify(context, message);
+    verify(context, message);
   }
 
 }
