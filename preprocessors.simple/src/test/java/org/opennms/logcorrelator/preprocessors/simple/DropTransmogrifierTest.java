@@ -26,6 +26,8 @@ public class DropTransmogrifierTest extends TestCase {
 
     final Transmogrifier transmogrifier = new DropTransmogrifier();
 
+    expect(context.getId()).andReturn("testId");
+    
     replay(context, message);
     transmogrifier.transmogrify(context, message);
     verify(context, message);
