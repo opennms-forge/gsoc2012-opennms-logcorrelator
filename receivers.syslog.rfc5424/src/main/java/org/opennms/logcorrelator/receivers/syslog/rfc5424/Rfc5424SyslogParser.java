@@ -28,7 +28,7 @@ public class Rfc5424SyslogParser implements SyslogParser {
 
     final Parser parser = new Parser();
     parser.semantics().receiver = this.receiver;
-    parser.semantics().message = this.receiver.getMessageFactory().createMessage();
+    parser.semantics().message = this.receiver.getMessageFactory().create();
 
     if (parser.parse(new SourceString(syslogMessage))) {
       return parser.semantics().message;

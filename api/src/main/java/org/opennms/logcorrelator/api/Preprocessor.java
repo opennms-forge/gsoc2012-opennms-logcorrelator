@@ -18,14 +18,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author Dustin Frisch <fooker@lab.sh>
  */
-public class Preprocessor implements PipelineProcessor, MessageDeclarationProvider {
+public class Preprocessor implements PipelineProcessor, MessageDeclarationProvider, Transmogrifier.Context {
   private final Logger logger = LoggerFactory.getLogger(Preprocessor.class);
-
+  
   private final String id;
 
-  private Set<Filter> filters;
+  private final MessageFactory messageFactory;
 
-  private Transmogrifier transmogrifier;
+  private final Set<Filter> filters;
+
+  private final Transmogrifier transmogrifier;
 
   /**
    * Next processor in the chain.
@@ -33,9 +35,11 @@ public class Preprocessor implements PipelineProcessor, MessageDeclarationProvid
   private Processor nextProcessor = null;
 
   public Preprocessor(final String id,
+                      final MessageFactory messageFactory,
                       final Set<Filter> filters,
                       final Transmogrifier transmogrifier) {
     this.id = id;
+    this.messageFactory = messageFactory;
     this.filters = filters;
     this.transmogrifier = transmogrifier;
   }
@@ -80,12 +84,9 @@ public class Preprocessor implements PipelineProcessor, MessageDeclarationProvid
     this.nextProcessor = nextProcessor;
   }
 
-  /**
-   * Relays the message to the next processor in the chain.
-   *
-   * @param message the message to relay
-   */
-  protected final void pass(final Message message) {
+
+  @Override
+  public final void pass(final Message message) {
     assert this.nextProcessor != null;
 
     logger.debug("Passing message to processor {}", this.getId(), this.nextProcessor.getId());
@@ -106,4 +107,13 @@ public class Preprocessor implements PipelineProcessor, MessageDeclarationProvid
     this.transmogrifier.registerMessageDeclaration(declarator);
   }
 
+  @Override
+  public Message createMessage() {
+    return this.messageFactory.create();
+  }
+
+  @Override
+  public Message copyMessage(final Message message) {
+    return this.messageFactory.copy(message);
+  }
 }

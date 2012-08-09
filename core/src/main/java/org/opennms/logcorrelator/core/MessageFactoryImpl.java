@@ -50,7 +50,7 @@ public class MessageFactoryImpl implements MessageFactory {
   }
 
   @Override
-  public final Message createMessage() {
+  public final Message create() {
     assert this.messageClass != null : "Message class not created";
 
     try {

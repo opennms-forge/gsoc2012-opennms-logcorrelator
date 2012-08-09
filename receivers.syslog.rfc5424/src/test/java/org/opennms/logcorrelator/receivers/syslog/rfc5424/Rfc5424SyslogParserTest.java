@@ -44,7 +44,7 @@ public class Rfc5424SyslogParserTest {
     final Message messageMock = createMock(Message.class);
 
     expect(receiverMock.getMessageFactory()).andReturn(messageFactoryMock);
-    expect(messageFactoryMock.createMessage()).andReturn(messageMock);
+    expect(messageFactoryMock.create()).andReturn(messageMock);
 
     messageMock.set(receiverMock.FACILITY, SyslogMessageFacility.USER);
     messageMock.set(receiverMock.SEVERITY, SyslogMessageSeverity.NOTICE);

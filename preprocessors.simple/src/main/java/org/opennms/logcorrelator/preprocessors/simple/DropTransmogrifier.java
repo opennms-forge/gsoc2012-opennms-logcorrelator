@@ -2,7 +2,6 @@ package org.opennms.logcorrelator.preprocessors.simple;
 
 import org.opennms.logcorrelator.api.Message;
 import org.opennms.logcorrelator.api.MessageDeclarator;
-import org.opennms.logcorrelator.api.Preprocessor;
 import org.opennms.logcorrelator.api.Transmogrifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,13 +24,13 @@ public class DropTransmogrifier implements Transmogrifier {
   }
 
   @Override
-  public void transmogrify(final Preprocessor preprocessor,
+  public void transmogrify(final Transmogrifier.Context context,
                            final Message message) {
     
     // Do nothing to drop the message - easy ;)
     logger.debug("Message {} dropped by {}.",
                  message,
-                 preprocessor.getId());
+                 context.getId());
   }
 
   @Override

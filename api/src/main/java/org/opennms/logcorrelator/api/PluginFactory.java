@@ -44,6 +44,7 @@ public class PluginFactory {
     final Transmogrifier transmogrifier = factory.create(config);
 
     return new Preprocessor(config.getId(),
+                            messageFactory,
                             createFilters(config.getFilters()),
                             transmogrifier);
   }

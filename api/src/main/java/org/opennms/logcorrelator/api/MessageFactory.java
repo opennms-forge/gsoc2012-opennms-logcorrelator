@@ -20,7 +20,7 @@ public interface MessageFactory {
    * 
    * @return the message
    */
-  public abstract Message createMessage();
+  public abstract Message create();
   
   /**
    * Creates a copy of the given message.
