@@ -4,6 +4,7 @@ import java.util.Calendar;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.opennms.logcorrelator.api.MessageAccessor;
 import org.opennms.logcorrelator.api.MessageDeclarator;
+import org.opennms.logcorrelator.api.MessageFactory;
 import org.opennms.logcorrelator.api.Pipeline;
 import org.opennms.logcorrelator.receivers.netty.NettyReceiver;
 
@@ -22,10 +23,12 @@ public abstract class SyslogReceiver extends NettyReceiver {
   private final Pipeline pipeline;
 
   public SyslogReceiver(final String id,
+                        final MessageFactory messageFactory,
                         final Pipeline pipeline,
                         final String host,
                         final int port) {
     super(id,
+          messageFactory,
           host,
           port);
 
@@ -42,6 +45,8 @@ public abstract class SyslogReceiver extends NettyReceiver {
 
   @Override
   public void registerMessageDeclaration(final MessageDeclarator declarator) {
+    super.registerMessageDeclaration(declarator);
+    
     this.FACILITY = declarator.registerField("facility", SyslogMessageFacility.class);
     this.SEVERITY = declarator.registerField("severity", SyslogMessageSeverity.class);
     this.TIMESTAMP = declarator.registerField("timestamp", Calendar.class);

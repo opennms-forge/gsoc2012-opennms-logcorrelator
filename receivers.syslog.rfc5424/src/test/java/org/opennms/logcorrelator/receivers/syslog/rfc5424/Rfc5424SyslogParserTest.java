@@ -1,9 +1,7 @@
 package org.opennms.logcorrelator.receivers.syslog.rfc5424;
 
 import java.util.Calendar;
-import java.util.Map;
 import org.easymock.Capture;
-import org.easymock.EasyMock;
 import static org.easymock.EasyMock.*;
 import org.junit.After;
 import static org.junit.Assert.*;
@@ -14,7 +12,6 @@ import org.opennms.logcorrelator.api.MessageAccessor;
 import org.opennms.logcorrelator.api.MessageFactory;
 import org.opennms.logcorrelator.receivers.syslog.SyslogMessageFacility;
 import org.opennms.logcorrelator.receivers.syslog.SyslogMessageSeverity;
-import org.opennms.logcorrelator.receivers.syslog.SyslogParser;
 
 
 public class Rfc5424SyslogParserTest {
@@ -40,11 +37,9 @@ public class Rfc5424SyslogParserTest {
     receiverMock.STRUCTURED_DATA = createMock(MessageAccessor.class);
     receiverMock.TIMESTAMP = createMock(MessageAccessor.class);
 
-    final MessageFactory messageFactoryMock = createMock(MessageFactory.class);
     final Message messageMock = createMock(Message.class);
 
-    expect(receiverMock.getMessageFactory()).andReturn(messageFactoryMock);
-    expect(messageFactoryMock.create()).andReturn(messageMock);
+    expect(receiverMock.createMessage()).andReturn(messageMock);
 
     messageMock.set(receiverMock.FACILITY, SyslogMessageFacility.USER);
     messageMock.set(receiverMock.SEVERITY, SyslogMessageSeverity.NOTICE);
@@ -66,7 +61,6 @@ public class Rfc5424SyslogParserTest {
     messageMock.set(receiverMock.BODY, "OpenNMS is fubar");
 
     replay(receiverMock,
-           messageFactoryMock,
            messageMock);
 
     final Rfc5424SyslogParser parser = new Rfc5424SyslogParser(receiverMock);
@@ -74,7 +68,6 @@ public class Rfc5424SyslogParserTest {
     parser.parse("<13>1 2012-06-25T05:56:03+02:00 test.opennms.org ulf opennms 42 [foo a=\"23\" b=\"42\" c=\"1337\"][bar x=\"ulf=[\\\"rock\\\\z\\\"\\]\"] OpenNMS is fubar");
 
     verify(receiverMock,
-           messageFactoryMock,
            messageMock);
 
     assertEquals(2012, timestamp.getValue().get(Calendar.YEAR));

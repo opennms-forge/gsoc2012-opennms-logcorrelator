@@ -7,12 +7,12 @@ import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.socket.DatagramChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioDatagramChannelFactory;
+import org.opennms.logcorrelator.api.AbstractReceiver;
+import org.opennms.logcorrelator.api.MessageFactory;
 import org.opennms.logcorrelator.api.Receiver;
 
 
-public abstract class NettyReceiver implements Receiver {
-  private final String id;
-
+public abstract class NettyReceiver extends AbstractReceiver {
   private final String host;
 
   private final int port;
@@ -22,16 +22,14 @@ public abstract class NettyReceiver implements Receiver {
   private Channel channel;
 
   public NettyReceiver(final String id,
+                       final MessageFactory messageFactory,
                        final String host,
                        final int port) {
-    this.id = id;
+    super(id,
+          messageFactory);
+
     this.host = host;
     this.port = port;
-  }
-
-  @Override
-  public final String getId() {
-    return this.id;
   }
 
   @Override
