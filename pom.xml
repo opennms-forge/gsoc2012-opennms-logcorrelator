@@ -31,9 +31,10 @@
     <module>receivers.syslog</module>
     <module>receivers.syslog.rfc5424</module>
 
-		<module>filters.mvel</module>
+    <module>filters.mvel</module>
 
     <module>preprocessors.simple</module>
+    <module>preprocessors.opennms</module>
 
     <module>correlators.opennms</module>
     <module>correlators.nop</module>
@@ -69,6 +70,18 @@
         <version>3.0</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>org.powermock</groupId>
+        <artifactId>powermock-module-junit4</artifactId>
+        <version>1.4.12</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.powermock</groupId>
+        <artifactId>powermock-api-easymock</artifactId>
+        <version>1.4.12</version>
+        <scope>test</scope>
+      </dependency> 
  
       <!-- Logging -->
       <dependency>
