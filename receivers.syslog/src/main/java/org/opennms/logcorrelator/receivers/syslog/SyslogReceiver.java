@@ -20,8 +20,6 @@ public abstract class SyslogReceiver extends NettyReceiver {
 
   public MessageAccessor<String> BODY;
 
-  private final Pipeline pipeline;
-
   public SyslogReceiver(final String id,
                         final MessageFactory messageFactory,
                         final Pipeline pipeline,
@@ -29,15 +27,14 @@ public abstract class SyslogReceiver extends NettyReceiver {
                         final int port) {
     super(id,
           messageFactory,
+          pipeline,
           host,
           port);
-
-    this.pipeline = pipeline;
   }
 
   @Override
   protected final ChannelPipelineFactory createPipelineFactory() {
-    return new SyslogServerPipelineFactory(this.pipeline,
+    return new SyslogServerPipelineFactory(this.getPipeline(),
                                            this.createSyslogParser());
   }
 

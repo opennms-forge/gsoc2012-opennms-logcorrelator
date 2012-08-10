@@ -9,7 +9,7 @@ import org.jboss.netty.channel.socket.DatagramChannelFactory;
 import org.jboss.netty.channel.socket.nio.NioDatagramChannelFactory;
 import org.opennms.logcorrelator.api.AbstractReceiver;
 import org.opennms.logcorrelator.api.MessageFactory;
-import org.opennms.logcorrelator.api.Receiver;
+import org.opennms.logcorrelator.api.Pipeline;
 
 
 public abstract class NettyReceiver extends AbstractReceiver {
@@ -23,10 +23,12 @@ public abstract class NettyReceiver extends AbstractReceiver {
 
   public NettyReceiver(final String id,
                        final MessageFactory messageFactory,
+                       final Pipeline pipeline,
                        final String host,
                        final int port) {
     super(id,
-          messageFactory);
+          messageFactory,
+          pipeline);
 
     this.host = host;
     this.port = port;

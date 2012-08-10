@@ -11,12 +11,16 @@ public abstract class AbstractReceiver implements Receiver {
 
   private final MessageFactory messageFactory;
 
+  private final Pipeline pipeline;
+
   private MessageAccessor<String> receiverIdAccessor;
 
   protected AbstractReceiver(final String id,
-                             final MessageFactory messageFactory) {
+                             final MessageFactory messageFactory,
+                             final Pipeline pipeline) {
     this.id = id;
     this.messageFactory = messageFactory;
+    this.pipeline = pipeline;
   }
 
   @Override
@@ -29,6 +33,10 @@ public abstract class AbstractReceiver implements Receiver {
     message.set(this.receiverIdAccessor, this.id);
 
     return message;
+  }
+
+  public final Pipeline getPipeline() {
+    return this.pipeline;
   }
 
   @Override
