@@ -32,9 +32,9 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
 
   private WebResource nodesResource;
 
-  public MessageAccessor<Object> valueAccessor;
+  public MessageAccessor<Object> VALUE;
 
-  public MessageAccessor<OnmsNode> nodeAccessor;
+  public MessageAccessor<OnmsNode> NODE;
 
   public NodeAssignmentTransmogrifier(final String baseUrl,
                                       final String username,
@@ -55,7 +55,7 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
                            final Message message) {
 
     // Get value to query for
-    final Object value = message.get(this.valueAccessor);
+    final Object value = message.get(this.VALUE);
 
     // Query for node definition with the value
     final OnmsNodeList nodes = this.nodesResource.queryParam(this.nodeCriteriaName,
@@ -69,7 +69,7 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
     } else if (nodes.getCount() == 1) {
       // If the message has an exact match to a node, attach the node to the
       // message and forward the message
-      message.set(this.nodeAccessor, nodes.get(0));
+      message.set(this.NODE, nodes.get(0));
       context.pass(message);
 
     } else {
@@ -79,7 +79,7 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
       // back to the pipeline
       for (OnmsNode node : nodes.getNodes()) {
         final Message copy = context.copyMessage(message);
-        copy.set(this.nodeAccessor, node);
+        copy.set(this.NODE, node);
 
         context.pass(copy);
       }
@@ -88,8 +88,8 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
 
   @Override
   public void registerMessageDeclaration(final MessageDeclarator declarator) {
-    this.valueAccessor = declarator.registerField(this.messageValueName, Object.class);
-    this.nodeAccessor = declarator.registerField("node", OnmsNode.class);
+    this.VALUE = declarator.registerField(this.messageValueName, Object.class);
+    this.NODE = declarator.registerField("node", OnmsNode.class);
   }
 
   @Override
