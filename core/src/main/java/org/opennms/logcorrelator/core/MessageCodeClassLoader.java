@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public final class MessageCodeClassLoader extends ClassLoader {
+public class MessageCodeClassLoader extends ClassLoader {
   private final static Logger logger = LoggerFactory.getLogger(MessageCodeClassLoader.class);
 
   private final ClassPool classPool;
