@@ -21,7 +21,7 @@ public class MessageProcessorServerHandler extends SimpleChannelUpstreamHandler 
   @Override
   public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
     final Message message = (Message) e.getMessage();
-    logger.debug("Message received: {}", message);
+    logger.debug("Message received from syslog: {}", message);
 
     this.pipeline.process(message);
   }
