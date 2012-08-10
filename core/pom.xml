@@ -92,7 +92,25 @@
     </dependency>
     <dependency>
       <groupId>org.opennms.logcorrelator</groupId>
+      <artifactId>opennms-logcorrelator-preprocessors-opennms</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.logcorrelator</groupId>
       <artifactId>opennms-logcorrelator-receivers-syslog-rfc5424</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.logcorrelator</groupId>
+      <artifactId>opennms-logcorrelator-receivers-flume</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>

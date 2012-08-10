@@ -30,6 +30,7 @@
     <module>receivers.netty</module>
     <module>receivers.syslog</module>
     <module>receivers.syslog.rfc5424</module>
+    <module>receivers.flume</module>
 
     <module>filters.mvel</module>
 
@@ -43,6 +44,7 @@
 
   <build>
     <plugins>
+      <!-- Compiler configuration -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -51,6 +53,27 @@
           <source>${jdkLevel}</source>
           <target>${jdkLevel}</target>
         </configuration>
+      </plugin>
+      
+      <!-- Code coverage -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.5.8.201207111220</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
