@@ -4,7 +4,7 @@ import org.opennms.logcorrelator.api.MessageFactory;
 import org.opennms.logcorrelator.api.Pipeline;
 import org.opennms.logcorrelator.api.Receiver;
 import org.opennms.logcorrelator.api.ReceiverFactory;
-import org.opennms.logcorrelator.config.ReceiverConfiguration;
+import org.opennms.logcorrelator.config.xml.ReceiverConfiguration;
 
 
 public class Rfc5424SyslogReceiverFactory implements ReceiverFactory {
@@ -13,8 +13,8 @@ public class Rfc5424SyslogReceiverFactory implements ReceiverFactory {
                          final MessageFactory messageFactory,
                          final Pipeline pipeline,
                          final ReceiverConfiguration configuration) {
-    final String host = configuration.getProperties().getProperty("host");
-    final int port = Integer.parseInt(configuration.getProperties().getProperty("port"));
+    final String host = configuration.getProperty("host");
+    final int port = Integer.parseInt(configuration.getProperty("port"));
 
     return new Rfc5424SyslogReceiver(id,
                                      messageFactory,

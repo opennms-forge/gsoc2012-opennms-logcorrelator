@@ -3,7 +3,7 @@ package org.opennms.logcorrelator.correlators.nop;
 import org.opennms.logcorrelator.api.Correlator;
 import org.opennms.logcorrelator.api.CorrelatorFactory;
 import org.opennms.logcorrelator.api.MessageFactory;
-import org.opennms.logcorrelator.config.CorrelatorConfiguration;
+import org.opennms.logcorrelator.config.xml.CorrelatorConfiguration;
 
 
 public class NopCorrelatorFactory implements CorrelatorFactory {

@@ -2,7 +2,7 @@ package org.opennms.logcorrelator.preprocessors.simple;
 
 import org.opennms.logcorrelator.api.Transmogrifier;
 import org.opennms.logcorrelator.api.TransmogrifierFactory;
-import org.opennms.logcorrelator.config.PreprocessorConfiguration;
+import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
 
 
 public class DropTransmogrifierFactory implements TransmogrifierFactory {

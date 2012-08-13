@@ -4,7 +4,7 @@ import org.opennms.logcorrelator.api.Filter;
 import org.opennms.logcorrelator.api.FilterFactory;
 import org.opennms.logcorrelator.api.Transmogrifier;
 import org.opennms.logcorrelator.api.TransmogrifierFactory;
-import org.opennms.logcorrelator.config.PreprocessorConfiguration;
+import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
 
 
 public final class MvelFilterFactory implements FilterFactory {

@@ -1,11 +1,12 @@
 package org.opennms.logcorrelator.api;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import org.opennms.logcorrelator.config.CorrelatorConfiguration;
-import org.opennms.logcorrelator.config.FiltersConfiguration;
-import org.opennms.logcorrelator.config.PreprocessorConfiguration;
-import org.opennms.logcorrelator.config.ReceiverConfiguration;
+import org.opennms.logcorrelator.config.xml.CorrelatorConfiguration;
+import org.opennms.logcorrelator.config.xml.FiltersConfiguration;
+import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
+import org.opennms.logcorrelator.config.xml.ReceiverConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +24,10 @@ public class PluginFactory {
   }
 
   public static Set<Filter> createFilters(final FiltersConfiguration config) throws Exception {
+    if (config == null) {
+      return Collections.emptySet();
+    }
+
     final Class<? extends FilterFactory> factoryClass = Class.forName(config.getLanguage()).asSubclass(FilterFactory.class);
     final FilterFactory factory = factoryClass.newInstance();
 

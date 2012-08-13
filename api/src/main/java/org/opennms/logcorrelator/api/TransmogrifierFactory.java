@@ -1,6 +1,6 @@
 package org.opennms.logcorrelator.api;
 
-import org.opennms.logcorrelator.config.PreprocessorConfiguration;
+import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
 
 
 /**

@@ -3,9 +3,9 @@ package org.opennms.logcorrelator.core;
 import java.util.ArrayList;
 import java.util.List;
 import org.opennms.logcorrelator.api.*;
-import org.opennms.logcorrelator.config.Configuration;
-import org.opennms.logcorrelator.config.PreprocessorConfiguration;
-import org.opennms.logcorrelator.config.ReceiverConfiguration;
+import org.opennms.logcorrelator.config.xml.Configuration;
+import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
+import org.opennms.logcorrelator.config.xml.ReceiverConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

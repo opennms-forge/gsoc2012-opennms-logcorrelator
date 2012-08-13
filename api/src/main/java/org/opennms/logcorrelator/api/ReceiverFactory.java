@@ -1,6 +1,6 @@
 package org.opennms.logcorrelator.api;
 
-import org.opennms.logcorrelator.config.ReceiverConfiguration;
+import org.opennms.logcorrelator.config.xml.ReceiverConfiguration;
 
 
 public interface ReceiverFactory {
