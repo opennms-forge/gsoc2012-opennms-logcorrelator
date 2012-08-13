@@ -56,6 +56,12 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
 
     // Get value to query for
     final Object value = message.get(this.VALUE);
+    
+    // Pass message on if value is null
+    if (value == null) {
+      context.pass(message);
+      return;
+    }
 
     // Query for node definition with the value
     final OnmsNodeList nodes = this.nodesResource.queryParam(this.nodeCriteriaName,
