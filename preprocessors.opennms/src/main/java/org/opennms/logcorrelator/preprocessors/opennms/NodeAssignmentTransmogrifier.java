@@ -64,19 +64,24 @@ public class NodeAssignmentTransmogrifier implements Transmogrifier {
     if (nodes.getCount() == 0) {
       // If there is no node matching to the message, the message will be
       // forwarded unchanged
+      logger.debug("No node information found for '{}' = '{}'", this.nodeCriteriaName, value);
+
       context.pass(message);
 
     } else if (nodes.getCount() == 1) {
       // If the message has an exact match to a node, attach the node to the
       // message and forward the message
+      logger.debug("Exactle one node information found for '{}' = '{}'", this.nodeCriteriaName, value);
+
       message.set(this.NODE, nodes.get(0));
       context.pass(message);
 
     } else {
-
       // If the message matches to multiple nodes, duplicate the message for
       // each node found, attach the node information to the copy and pass it
       // back to the pipeline
+      logger.debug("Multiple node information found for '{}' = '{}'", this.nodeCriteriaName, value);
+
       for (OnmsNode node : nodes.getNodes()) {
         final Message copy = context.copyMessage(message);
         copy.set(this.NODE, node);
