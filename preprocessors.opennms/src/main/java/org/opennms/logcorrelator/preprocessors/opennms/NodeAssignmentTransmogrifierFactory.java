@@ -8,17 +8,17 @@ import org.opennms.logcorrelator.config.xml.PreprocessorConfiguration;
 public class NodeAssignmentTransmogrifierFactory implements TransmogrifierFactory {
   @Override
   public Transmogrifier create(final PreprocessorConfiguration configuration) {
-    final String baseUrl = configuration.getProperty("baseUrl");
+    final String baseUrl = configuration.getFirstProperty("baseUrl");
 
-    final String username = configuration.getProperty("username");
+    final String username = configuration.getFirstProperty("username");
 
-    final String password = configuration.getProperty("password");
+    final String password = configuration.getFirstProperty("password");
 
-    final String nodeCriteriaName = configuration.getProperty("nodeCriteriaName",
-                                                              "ipInterface.ipHostName");
+    final String nodeCriteriaName = configuration.getFirstProperty("nodeCriteriaName",
+                                                                   "ipInterface.ipHostName");
 
-    final String messageValueName = configuration.getProperty("messageValueName",
-                                                              "host");
+    final String messageValueName = configuration.getFirstProperty("messageValueName",
+                                                                   "host");
 
     return new NodeAssignmentTransmogrifier(baseUrl,
                                             username,

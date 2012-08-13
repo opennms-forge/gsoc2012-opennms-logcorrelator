@@ -13,8 +13,8 @@ public class FlumeReceiverFactory implements ReceiverFactory {
                          final MessageFactory messageFactory,
                          final Pipeline pipeline,
                          final ReceiverConfiguration configuration) {
-    final String host = configuration.getProperty("host");
-    final int port = Integer.parseInt(configuration.getProperty("port"));
+    final String host = configuration.getFirstProperty("host");
+    final int port = Integer.parseInt(configuration.getFirstProperty("port"));
 
     return new FlumeReceiver(id,
                              messageFactory,

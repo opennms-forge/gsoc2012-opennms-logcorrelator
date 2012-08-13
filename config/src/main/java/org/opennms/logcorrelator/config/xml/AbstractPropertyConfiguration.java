@@ -1,13 +1,12 @@
 package org.opennms.logcorrelator.config.xml;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import com.google.common.collect.LinkedListMultimap;
+import com.google.common.collect.ListMultimap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.opennms.logcorrelator.config.PropertiesXmlAdapter;
@@ -18,29 +17,46 @@ import org.opennms.logcorrelator.config.PropertiesXmlAdapter;
 public abstract class AbstractPropertyConfiguration {
   @XmlElement(name = "properties")
   @XmlJavaTypeAdapter(value = PropertiesXmlAdapter.class)
-  private Map<String, String> properties = new HashMap<String, String>();
+  private ListMultimap<String, String> properties = LinkedListMultimap.create();
 
-  public Map<String, String> getProperties() {
+  public ListMultimap<String, String> getProperties() {
     return this.properties;
   }
 
-  public void setProperties(final Map<String, String> properties) {
+  public void setProperties(final ListMultimap<String, String> properties) {
     this.properties = properties;
   }
 
-  public String getProperty(final String key) {
-    return this.properties.get(key);
+  public List<String> getProperty(final String key,
+                                  final String defaultValue) {
+    final List<String> values = this.properties.get(key);
+
+    if (values == null) {
+      return Collections.singletonList(defaultValue);
+    }
+
+    return values;
   }
 
-  public String getProperty(final String key,
-                                  final String defaultValue) {
-    final String value = this.properties.get(key);
+  public List<String> getProperty(final String key) {
+    return this.getProperty(key,
+                            null);
+  }
 
-    if (value == null) {
+  public String getFirstProperty(final String key,
+                                 final String defaultValue) {
+    final List<String> values = this.properties.get(key);
+
+    if (values == null || values.isEmpty()) {
       return defaultValue;
     }
 
-    return value;
+    return values.get(0);
+  }
+
+  public String getFirstProperty(final String key) {
+    return this.getFirstProperty(key,
+                                 null);
   }
 
 }
