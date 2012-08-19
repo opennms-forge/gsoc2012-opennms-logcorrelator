@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.core</OriginalElement>
+  <nodes>
+    <node x="584.2464583333335" y="1142.0">org.opennms.logcorrelator.core.PipelineImpl</node>
+    <node x="1128.67125" y="237.0">org.opennms.logcorrelator.core.MessageCodeClassLoaderTest</node>
+    <node x="552.5212500000001" y="539.0">org.opennms.logcorrelator.core.MessageFieldDeclaration</node>
+    <node x="573.0" y="1477.5">org.opennms.logcorrelator.core.PipelineImplTest</node>
+    <node x="925.0" y="1555.0">org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Base</node>
+    <node x="71.0" y="1444.0">org.opennms.logcorrelator.core.ProcessingContext</node>
+    <node x="1087.0" y="1555.0">org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Bar</node>
+    <node x="865.25" y="0.0">org.opennms.logcorrelator.core.MessageCodeClassLoader</node>
+    <node x="1006.5" y="1746.0">org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Extended</node>
+    <node x="899.75" y="1077.0">org.opennms.logcorrelator.core.MessageDeclaratorImplTest</node>
+    <node x="389.25000000000006" y="841.0">org.opennms.logcorrelator.core.MessageDeclaratorImpl</node>
+    <node x="0.0" y="1821.0">org.opennms.logcorrelator.core.Main</node>
+    <node x="1010.0" y="1555.0">org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Foo</node>
+    <node x="1464.67125" y="0.0">org.opennms.logcorrelator.core.AbstractMessage</node>
+    <node x="900.25" y="863.5">org.opennms.logcorrelator.core.MessageCodeGeneratorTest</node>
+    <node x="0.0" y="1109.0">org.opennms.logcorrelator.core.MessageFactoryImpl</node>
+    <node x="471.6712500000001" y="192.0">org.opennms.logcorrelator.core.MessageCodeGenerator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.core.ProcessingContext" target="org.opennms.logcorrelator.core.MessageFactoryImpl">
+      <point x="-120.5" y="-126.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Foo" target="org.opennms.logcorrelator.core.MessageDeclaratorImplTest">
+      <point x="0.0" y="-15.0" />
+      <point x="1038.5" y="1419.0" />
+      <point x="1032.5" y="1419.0" />
+      <point x="-44.25" y="158.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Extended" target="org.opennms.logcorrelator.core.MessageDeclaratorImplTest">
+      <point x="24.5" y="-15.0" />
+      <point x="1080.0" y="1721.0" />
+      <point x="1153.5" y="1721.0" />
+      <point x="1153.5" y="1419.0" />
+      <point x="1209.5" y="1419.0" />
+      <point x="132.75" y="158.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageFactoryImpl" target="org.opennms.logcorrelator.core.MessageDeclaratorImpl">
+      <point x="-95.75" y="-126.5" />
+      <point x="95.75" y="1047.0" />
+      <point x="450.62500000000006" y="1047.0" />
+      <point x="-184.125" y="93.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Base" target="org.opennms.logcorrelator.core.MessageDeclaratorImplTest">
+      <point x="0.0" y="-15.0" />
+      <point x="957.5" y="1419.0" />
+      <point x="944.0" y="1419.0" />
+      <point x="-132.75" y="158.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Extended" target="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Base">
+      <point x="-24.5" y="-15.0" />
+      <point x="1031.0" y="1721.0" />
+      <point x="957.5" y="1721.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.PipelineImplTest" target="org.opennms.logcorrelator.core.PipelineImpl">
+      <point x="-83.0" y="-92.5" />
+      <point x="656.0" y="1419.0" />
+      <point x="687.2464583333335" y="1419.0" />
+      <point x="1.4210854715202004E-14" y="93.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageCodeClassLoaderTest" target="org.opennms.logcorrelator.core.MessageCodeClassLoader">
+      <point x="72.75" y="-103.5" />
+      <point x="1346.92125" y="162.0" />
+      <point x="1191.625" y="162.0" />
+      <point x="139.875" y="71.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest.Bar" target="org.opennms.logcorrelator.core.MessageDeclaratorImplTest">
+      <point x="0.0" y="-15.0" />
+      <point x="1115.0" y="1419.0" />
+      <point x="1121.0" y="1419.0" />
+      <point x="44.25" y="158.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageFieldDeclaration" target="org.opennms.logcorrelator.core.MessageCodeGenerator">
+      <point x="0.0" y="-126.0" />
+      <point x="794.5212500000001" y="519.0" />
+      <point x="790.1712500000001" y="519.0" />
+      <point x="0.0" y="148.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.ProcessingContext" target="org.opennms.logcorrelator.core.PipelineImpl">
+      <point x="120.5" y="-126.0" />
+      <point x="432.5" y="1419.0" />
+      <point x="618.5797916666668" y="1419.0" />
+      <point x="-68.66666666666669" y="93.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageCodeGeneratorTest" target="org.opennms.logcorrelator.core.MessageCodeGenerator">
+      <point x="134.66666666666663" y="-70.5" />
+      <point x="1236.9166666666667" y="816.0" />
+      <point x="1118.100625" y="816.0" />
+      <point x="1118.100625" y="509.0" />
+      <point x="1044.97125" y="509.0" />
+      <point x="254.79999999999995" y="148.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImplTest" target="org.opennms.logcorrelator.core.MessageDeclaratorImpl">
+      <point x="88.5" y="-158.5" />
+      <point x="1165.25" y="1047.0" />
+      <point x="818.875" y="1047.0" />
+      <point x="184.125" y="93.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImpl" target="org.opennms.logcorrelator.core.MessageFieldDeclaration">
+      <point x="184.125" y="-93.0" />
+      <point x="818.875" y="816.0" />
+      <point x="794.5212500000001" y="816.0" />
+      <point x="0.0" y="126.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageDeclaratorImpl" target="org.opennms.logcorrelator.core.MessageCodeGenerator">
+      <point x="-184.125" y="-93.0" />
+      <point x="450.62500000000006" y="816.0" />
+      <point x="531.0212500000001" y="816.0" />
+      <point x="531.0212500000001" y="519.0" />
+      <point x="535.3712500000001" y="519.0" />
+      <point x="-254.79999999999995" y="148.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageCodeGenerator" target="org.opennms.logcorrelator.core.MessageCodeClassLoader">
+      <point x="-159.25" y="-148.5" />
+      <point x="630.9212500000001" y="172.0" />
+      <point x="911.875" y="172.0" />
+      <point x="-139.875" y="71.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.core.MessageCodeGeneratorTest" target="org.opennms.logcorrelator.core.MessageFieldDeclaration">
+      <point x="-134.66666666666652" y="-70.5" />
+      <point x="967.5833333333335" y="816.0" />
+      <point x="955.8545833333335" y="816.0" />
+      <point x="161.33333333333337" y="126.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4279749478079332" x="866.3268292682926" y="808.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

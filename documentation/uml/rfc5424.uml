@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.receivers.syslog.rfc5424</OriginalElement>
+  <nodes>
+    <node x="118.0" y="473.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.mouse</node>
+    <node x="406.0" y="257.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParser</node>
+    <node x="664.0" y="408.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParserTest</node>
+    <node x="-2.0" y="350.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogMessageStructuredData</node>
+    <node x="-359.0" y="260.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiverFactory</node>
+    <node x="-4.0" y="-47.0">org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParser">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParser" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogMessageStructuredData">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiverFactory" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.mouse" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogMessageStructuredData">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.mouse" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiver">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParserTest" target="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogParser">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9815852682145717" x="255.5" y="228.5" />
+  <SelectedNodes>
+    <node>org.opennms.logcorrelator.receivers.syslog.rfc5424.mouse</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

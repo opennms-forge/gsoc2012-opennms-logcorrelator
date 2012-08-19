@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-receivers-syslog-rfc5424</OriginalElement>
+  <nodes>
+    <node x="10.5" y="80.0">mdl-opennms-logcorrelator-receivers-syslog</node>
+    <node x="196.29722222222222" y="240.0">mdl-opennms-logcorrelator-api</node>
+    <node x="77.33333333333337" y="320.0">mdl-opennms-logcorrelator-config</node>
+    <node x="344.5" y="160.0">mdl-opennms-logcorrelator-receivers-netty</node>
+    <node x="62.96666666666661" y="0.0">mdl-opennms-logcorrelator-receivers-syslog-rfc5424</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-api">
+      <point x="2.8421709430404007E-14" y="15.0" />
+      <point x="167.00000000000003" y="135.0" />
+      <point x="139.79722222222222" y="135.0" />
+      <point x="139.79722222222222" y="215.0" />
+      <point x="233.13055555555553" y="215.0" />
+      <point x="-73.66666666666669" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-receivers-syslog">
+      <point x="-46.87499999999997" y="15.0" />
+      <point x="203.59166666666664" y="55.0" />
+      <point x="167.0" y="55.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-config">
+      <point x="-104.33333333333329" y="15.0" />
+      <point x="62.666666666666714" y="135.0" />
+      <point x="108.22500000000002" y="135.0" />
+      <point x="108.22500000000002" y="290.0" />
+      <point x="168.08333333333337" y="290.0" />
+      <point x="-30.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-netty" target="mdl-opennms-logcorrelator-api">
+      <point x="-76.25" y="15.0" />
+      <point x="420.75" y="215.0" />
+      <point x="380.4638888888889" y="215.0" />
+      <point x="73.66666666666669" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="306.7972222222222" y="290.0" />
+      <point x="228.58333333333337" y="290.0" />
+      <point x="30.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-receivers-netty">
+      <point x="140.62500000000003" y="15.0" />
+      <point x="391.09166666666664" y="55.0" />
+      <point x="573.25" y="55.0" />
+      <point x="76.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-config">
+      <point x="-140.62499999999997" y="15.0" />
+      <point x="109.84166666666664" y="55.0" />
+      <point x="0.0" y="55.0" />
+      <point x="0.0" y="300.0" />
+      <point x="107.58333333333337" y="300.0" />
+      <point x="-90.75" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-netty" target="mdl-opennms-logcorrelator-config">
+      <point x="76.25" y="15.0" />
+      <point x="573.25" y="300.0" />
+      <point x="289.08333333333337" y="300.0" />
+      <point x="90.75" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-api">
+      <point x="46.87500000000003" y="15.0" />
+      <point x="297.34166666666664" y="55.0" />
+      <point x="334.0" y="55.0" />
+      <point x="334.0" y="215.0" />
+      <point x="306.7972222222222" y="215.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-receivers-netty">
+      <point x="104.33333333333334" y="15.0" />
+      <point x="271.33333333333337" y="135.0" />
+      <point x="420.75" y="135.0" />
+      <point x="-76.25" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="325.0" y="175.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-receivers-syslog-rfc5424</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Test dependencies</Category>
+  </Categories>
+</Diagram>
+

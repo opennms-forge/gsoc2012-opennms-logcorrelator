@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.api</OriginalElement>
+  <nodes>
+    <node x="454.8527777777779" y="189.5">org.opennms.logcorrelator.api.Receiver</node>
+    <node x="841.5555555555555" y="381.5">org.opennms.logcorrelator.api.PipelineProcessor</node>
+    <node x="55.02682926829266" y="620.9317073170731">org.opennms.logcorrelator.api.MessageAccessor</node>
+    <node x="278.0" y="303.0">org.opennms.logcorrelator.api.AbstractReceiver</node>
+    <node x="1222.4243902439023" y="493.970731707317">org.opennms.logcorrelator.api.Filter</node>
+    <node x="24.402439024390105" y="1098.541463414634">org.opennms.logcorrelator.api.PreprocessorTest</node>
+    <node x="342.21951219512187" y="630.6926829268292">org.opennms.logcorrelator.api.MessageFactory</node>
+    <node x="24.402439024390105" y="1001.5414634146341">org.opennms.logcorrelator.api.MessageDeclarator</node>
+    <node x="862.2888888888889" y="178.0">org.opennms.logcorrelator.api.Processor</node>
+    <node x="1257.5390243902439" y="630.6926829268292">org.opennms.logcorrelator.api.PluginFactory</node>
+    <node x="574.4024390243901" y="904.5414634146341">org.opennms.logcorrelator.api.CorrelatorFactory</node>
+    <node x="1123.40243902439" y="1001.5414634146341">org.opennms.logcorrelator.api.FilterFactory</node>
+    <node x="592.1805555555555" y="33.0">org.opennms.logcorrelator.api.MessageDeclarationProvider</node>
+    <node x="1069.5555555555554" y="392.5">org.opennms.logcorrelator.api.Pipeline</node>
+    <node x="0.0" y="348.0">org.opennms.logcorrelator.api.Transmogrifier.Context</node>
+    <node x="727.3303969548667" y="557.5464926590539">org.opennms.logcorrelator.api.Preprocessor</node>
+    <node x="157.54166666666674" y="0.0">org.opennms.logcorrelator.api.Plugin</node>
+    <node x="1114.0" y="904.0">org.opennms.logcorrelator.api.Message</node>
+    <node x="23.352777777777874" y="189.5">org.opennms.logcorrelator.api.Transmogrifier</node>
+    <node x="459.4024390243901" y="1001.5414634146341">org.opennms.logcorrelator.api.TransmogrifierFactory</node>
+    <node x="24.402439024390105" y="904.5414634146341">org.opennms.logcorrelator.api.ReceiverFactory</node>
+    <node x="684.0" y="392.5">org.opennms.logcorrelator.api.Correlator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.api.Receiver" target="org.opennms.logcorrelator.api.MessageDeclarationProvider">
+      <point x="26.75" y="-26.0" />
+      <point x="535.1027777777779" y="172.84502446982054" />
+      <point x="736.9305555555555" y="175.81402936378467" />
+      <point x="-48.25" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Transmogrifier.Context" target="org.opennms.logcorrelator.api.Transmogrifier">
+      <point x="0.0" y="-59.5" />
+      <point x="129.0" y="283.0" />
+      <point x="166.35277777777787" y="283.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Correlator" target="org.opennms.logcorrelator.api.Plugin">
+      <point x="-34.0" y="-15.0" />
+      <point x="701.0" y="273.0" />
+      <point x="12.852777777777874" y="273.0" />
+      <point x="12.852777777777874" y="148.0" />
+      <point x="180.8750000000001" y="148.0" />
+      <point x="-46.66666666666663" y="59.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.AbstractReceiver" target="org.opennms.logcorrelator.api.Receiver">
+      <point x="0.0" y="-104.5" />
+      <point x="471.0" y="283.0" />
+      <point x="508.3527777777779" y="283.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Preprocessor" target="org.opennms.logcorrelator.api.MessageDeclarationProvider">
+      <point x="157.33333333333331" y="-148.5" />
+      <point x="1122.148232735182" y="535.515497553018" />
+      <point x="1168.0555555555554" y="537.0" />
+      <point x="1168.0555555555554" y="158.0" />
+      <point x="929.9305555555555" y="158.0" />
+      <point x="144.75" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.PipelineProcessor" target="org.opennms.logcorrelator.api.Processor">
+      <point x="0.0" y="-26.0" />
+      <point x="945.5555555555555" y="283.0" />
+      <point x="960.2888888888889" y="283.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Correlator" target="org.opennms.logcorrelator.api.MessageDeclarationProvider">
+      <point x="0.0" y="-15.0" />
+      <point x="735.0" y="273.0" />
+      <point x="772.3527777777779" y="273.0" />
+      <point x="772.3527777777779" y="158.0" />
+      <point x="833.4305555555555" y="158.0" />
+      <point x="48.25" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Receiver" target="org.opennms.logcorrelator.api.Plugin">
+      <point x="-26.75" y="-26.0" />
+      <point x="481.6027777777779" y="138.0" />
+      <point x="274.20833333333337" y="138.0" />
+      <point x="46.66666666666663" y="59.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Preprocessor" target="org.opennms.logcorrelator.api.Transmogrifier.Context">
+      <point x="-157.33333333333337" y="-148.5" />
+      <point x="805.9970636215336" y="537.0" />
+      <point x="129.0" y="537.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Pipeline" target="org.opennms.logcorrelator.api.Processor">
+      <point x="0.0" y="-15.0" />
+      <point x="1113.5555555555554" y="283.0" />
+      <point x="1025.6222222222223" y="283.0" />
+      <point x="65.33333333333331" y="37.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Transmogrifier" target="org.opennms.logcorrelator.api.Plugin">
+      <point x="-71.5" y="-26.0" />
+      <point x="94.85277777777787" y="158.0" />
+      <point x="227.54166666666674" y="158.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Correlator" target="org.opennms.logcorrelator.api.Processor">
+      <point x="34.0" y="-15.0" />
+      <point x="769.0" y="283.0" />
+      <point x="894.9555555555555" y="283.0" />
+      <point x="-65.33333333333331" y="37.5" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Transmogrifier" target="org.opennms.logcorrelator.api.MessageDeclarationProvider">
+      <point x="71.5" y="-26.0" />
+      <point x="237.85277777777787" y="156.90701468189232" />
+      <point x="640.4305555555555" y="159.87601957585645" />
+      <point x="-144.75" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.api.Preprocessor" target="org.opennms.logcorrelator.api.PipelineProcessor">
+      <point x="-2.8421709430404007E-14" y="-148.5" />
+      <point x="964.8148994018488" y="538.4845024469821" />
+      <point x="945.5555555555555" y="537.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6736263736263737" x="899.9999999999999" y="564.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

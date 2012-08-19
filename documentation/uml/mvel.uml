@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.filters.mvel</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">org.opennms.logcorrelator.filters.mvel.MvelFilter</node>
+    <node x="19.0" y="165.0">org.opennms.logcorrelator.filters.mvel.MvelFilterFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.filters.mvel.MvelFilterFactory" target="org.opennms.logcorrelator.filters.mvel.MvelFilter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="104.5" y="108.5" />
+  <SelectedNodes>
+    <node>org.opennms.logcorrelator.filters.mvel.MvelFilterFactory</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

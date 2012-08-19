@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-core</OriginalElement>
+  <nodes>
+    <node x="193.44820261437917" y="190.0">mdl-opennms-logcorrelator-receivers-syslog</node>
+    <node x="677.7691993464055" y="490.0">mdl-opennms-logcorrelator-config</node>
+    <node x="1091.8541666666665" y="110.0">mdl-opennms-logcorrelator-correlators-nop</node>
+    <node x="652.6037581699346" y="0.0">mdl-opennms-logcorrelator-core</node>
+    <node x="1247.508088235294" y="280.0">mdl-opennms-logcorrelator-preprocessors-simple</node>
+    <node x="30.44820261437917" y="280.0">mdl-opennms-logcorrelator-receivers-netty</node>
+    <node x="24.062091503267993" y="110.0">mdl-opennms-logcorrelator-receivers-syslog-rfc5424</node>
+    <node x="724.1041666666666" y="110.0">mdl-opennms-logcorrelator-correlators-drools</node>
+    <node x="412.10416666666663" y="280.0">mdl-opennms-logcorrelator-filters-mvel</node>
+    <node x="627.7691993464055" y="380.0">mdl-opennms-logcorrelator-api</node>
+    <node x="890.8541666666667" y="190.0">mdl-opennms-logcorrelator-correlators-opennms</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-correlators-opennms">
+      <point x="34.35000000000002" y="15.0" />
+      <point x="801.4537581699346" y="80.0" />
+      <point x="1062.8541666666667" y="80.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-receivers-syslog">
+      <point x="-57.25" y="15.0" />
+      <point x="709.8537581699346" y="70.0" />
+      <point x="428.19820261437917" y="70.0" />
+      <point x="78.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-config">
+      <point x="-140.625" y="15.0" />
+      <point x="70.937091503268" y="165.0" />
+      <point x="19.94820261437917" y="165.0" />
+      <point x="19.94820261437917" y="470.0" />
+      <point x="689.8691993464055" y="470.0" />
+      <point x="-108.89999999999998" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-nop" target="mdl-opennms-logcorrelator-api">
+      <point x="0.0" y="15.0" />
+      <point x="1245.3541666666665" y="260.0" />
+      <point x="1207.8414215686275" y="260.0" />
+      <point x="1207.8414215686275" y="350.0" />
+      <point x="811.935866013072" y="350.0" />
+      <point x="73.66666666666663" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="885.6041666666666" y="165.0" />
+      <point x="853.1037581699345" y="165.0" />
+      <point x="853.1037581699345" y="250.0" />
+      <point x="1237.008088235294" y="250.0" />
+      <point x="1237.008088235294" y="430.0" />
+      <point x="810.8691993464054" y="430.0" />
+      <point x="12.099999999999909" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-preprocessors-simple">
+      <point x="80.14999999999998" y="15.0" />
+      <point x="847.2537581699346" y="60.0" />
+      <point x="1441.3541666666665" y="60.0" />
+      <point x="1441.3541666666665" y="250.0" />
+      <point x="1422.008088235294" y="250.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-receivers-netty">
+      <point x="-103.05000000000007" y="15.0" />
+      <point x="664.0537581699346" y="50.0" />
+      <point x="0.0" y="50.0" />
+      <point x="0.0" y="240.0" />
+      <point x="81.28153594771254" y="240.0" />
+      <point x="-101.66666666666663" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-filters-mvel" target="mdl-opennms-logcorrelator-api">
+      <point x="70.0" y="15.0" />
+      <point x="622.1041666666666" y="330.0" />
+      <point x="689.1580882352944" y="330.0" />
+      <point x="-49.111111111111086" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-netty" target="mdl-opennms-logcorrelator-config">
+      <point x="-76.25" y="15.0" />
+      <point x="106.69820261437917" y="460.0" />
+      <point x="714.0691993464054" y="460.0" />
+      <point x="-84.70000000000005" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-receivers-syslog">
+      <point x="46.875" y="15.0" />
+      <point x="258.437091503268" y="165.0" />
+      <point x="271.69820261437917" y="165.0" />
+      <point x="-78.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-api">
+      <point x="104.33333333333331" y="15.0" />
+      <point x="454.2815359477125" y="240.0" />
+      <point x="398.85416666666663" y="240.0" />
+      <point x="398.85416666666663" y="340.0" />
+      <point x="664.6025326797387" y="340.0" />
+      <point x="-73.66666666666663" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-nop" target="mdl-opennms-logcorrelator-correlators-opennms">
+      <point x="-102.33333333333326" y="15.0" />
+      <point x="1143.0208333333335" y="165.0" />
+      <point x="1177.5208333333335" y="165.0" />
+      <point x="114.66666666666674" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-api">
+      <point x="140.625" y="15.0" />
+      <point x="352.187091503268" y="165.0" />
+      <point x="702.6041666666666" y="165.0" />
+      <point x="702.6041666666666" y="340.0" />
+      <point x="713.7136437908498" y="340.0" />
+      <point x="-24.555555555555543" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-opennms" target="mdl-opennms-logcorrelator-config">
+      <point x="86.0" y="15.0" />
+      <point x="1148.8541666666667" y="240.0" />
+      <point x="1607.008088235294" y="240.0" />
+      <point x="1607.008088235294" y="450.0" />
+      <point x="859.2691993464055" y="450.0" />
+      <point x="60.5" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-correlators-nop">
+      <point x="57.25" y="15.0" />
+      <point x="824.3537581699346" y="70.0" />
+      <point x="1245.3541666666665" y="70.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-preprocessors-simple" target="mdl-opennms-logcorrelator-config">
+      <point x="87.25" y="15.0" />
+      <point x="1509.258088235294" y="440.0" />
+      <point x="835.0691993464054" y="440.0" />
+      <point x="36.299999999999955" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="349.94820261437917" y="240.0" />
+      <point x="364.18749999999994" y="240.0" />
+      <point x="364.18749999999994" y="450.0" />
+      <point x="738.2691993464055" y="450.0" />
+      <point x="-60.5" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-correlators-drools">
+      <point x="11.449999999999932" y="15.0" />
+      <point x="778.5537581699346" y="90.0" />
+      <point x="885.6041666666666" y="90.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-api">
+      <point x="-11.450000000000045" y="15.0" />
+      <point x="755.6537581699346" y="90.0" />
+      <point x="713.6041666666666" y="90.0" />
+      <point x="713.6041666666666" y="330.0" />
+      <point x="738.2691993464055" y="330.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog" target="mdl-opennms-logcorrelator-receivers-netty">
+      <point x="-104.33333333333331" y="15.0" />
+      <point x="245.6148692810459" y="240.0" />
+      <point x="284.6148692810459" y="240.0" />
+      <point x="101.66666666666669" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-filters-mvel" target="mdl-opennms-logcorrelator-config">
+      <point x="-70.0" y="15.0" />
+      <point x="482.10416666666663" y="360.0" />
+      <point x="444.59142156862754" y="360.0" />
+      <point x="444.59142156862754" y="440.0" />
+      <point x="762.4691993464055" y="440.0" />
+      <point x="-36.299999999999955" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-opennms" target="mdl-opennms-logcorrelator-api">
+      <point x="-86.0" y="15.0" />
+      <point x="976.8541666666667" y="260.0" />
+      <point x="939.3414215686275" y="260.0" />
+      <point x="939.3414215686275" y="340.0" />
+      <point x="787.3803104575165" y="340.0" />
+      <point x="49.111111111111086" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-api">
+      <point x="-107.66666666666674" y="15.0" />
+      <point x="777.9374999999999" y="165.0" />
+      <point x="788.758088235294" y="165.0" />
+      <point x="788.758088235294" y="330.0" />
+      <point x="762.8247549019609" y="330.0" />
+      <point x="24.555555555555543" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-correlators-opennms">
+      <point x="107.66666666666663" y="15.0" />
+      <point x="993.2708333333333" y="165.0" />
+      <point x="948.1875" y="165.0" />
+      <point x="-114.66666666666663" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-netty" target="mdl-opennms-logcorrelator-api">
+      <point x="76.25" y="15.0" />
+      <point x="259.19820261437917" y="350.0" />
+      <point x="640.0469771241833" y="350.0" />
+      <point x="-98.22222222222217" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-config">
+      <point x="103.04999999999995" y="15.0" />
+      <point x="870.1537581699346" y="50.0" />
+      <point x="1629.008088235294" y="50.0" />
+      <point x="1629.008088235294" y="470.0" />
+      <point x="907.6691993464053" y="470.0" />
+      <point x="108.89999999999986" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="738.2691993464055" y="430.0" />
+      <point x="786.6691993464054" y="430.0" />
+      <point x="-12.100000000000023" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-receivers-syslog-rfc5424">
+      <point x="-80.14999999999998" y="15.0" />
+      <point x="686.9537581699346" y="60.0" />
+      <point x="211.562091503268" y="60.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-core" target="mdl-opennms-logcorrelator-filters-mvel">
+      <point x="-34.35000000000002" y="15.0" />
+      <point x="732.7537581699346" y="80.0" />
+      <point x="552.1041666666666" y="80.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-preprocessors-simple" target="mdl-opennms-logcorrelator-api">
+      <point x="-87.25" y="15.0" />
+      <point x="1334.758088235294" y="360.0" />
+      <point x="836.4914215686276" y="360.0" />
+      <point x="98.22222222222217" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-nop" target="mdl-opennms-logcorrelator-config">
+      <point x="102.33333333333326" y="15.0" />
+      <point x="1347.6875" y="165.0" />
+      <point x="1618.008088235294" y="165.0" />
+      <point x="1618.008088235294" y="460.0" />
+      <point x="883.4691993464054" y="460.0" />
+      <point x="84.69999999999993" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-receivers-syslog-rfc5424" target="mdl-opennms-logcorrelator-receivers-netty">
+      <point x="-46.875" y="15.0" />
+      <point x="164.687091503268" y="165.0" />
+      <point x="182.94820261437917" y="165.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.743030303030303" x="815.0" y="260.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-core</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+

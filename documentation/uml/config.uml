@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.config</OriginalElement>
+  <nodes>
+    <node x="0.0" y="164.0">org.opennms.logcorrelator.config.PropertiesXmlAdapter</node>
+    <node x="35.0" y="299.0">org.opennms.logcorrelator.config.xml</node>
+    <node x="2.0" y="9.0">org.opennms.logcorrelator.config.Utils</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.config.xml" target="org.opennms.logcorrelator.config.xml">
+      <point x="0.0" y="0.0" />
+      <point x="178.0" y="274.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.config.PropertiesXmlAdapter" target="org.opennms.logcorrelator.config.xml">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="178.0" y="169.0" />
+  <SelectedNodes>
+    <node>org.opennms.logcorrelator.config.xml</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

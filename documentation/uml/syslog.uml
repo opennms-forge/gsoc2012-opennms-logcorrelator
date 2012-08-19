@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.receivers.syslog</OriginalElement>
+  <nodes>
+    <node x="15.521951219512147" y="285.6682926829268">org.opennms.logcorrelator.receivers.syslog.SyslogParser</node>
+    <node x="714.8560975609757" y="484.25609756097566">org.opennms.logcorrelator.receivers.syslog.SyslogServerPipelineFactory</node>
+    <node x="516.0" y="0.0">org.opennms.logcorrelator.receivers.syslog.SyslogReceiver</node>
+    <node x="-96.79024390243904" y="488.48292682926825">org.opennms.logcorrelator.receivers.syslog.SyslogServerDecoder</node>
+    <node x="1201.0024390243902" y="265.1707317073171">org.opennms.logcorrelator.receivers.syslog.SyslogMessageFacility</node>
+    <node x="375.5" y="280.0">org.opennms.logcorrelator.receivers.syslog.rfc5424</node>
+    <node x="1084.990243902439" y="17.804878048780495">org.opennms.logcorrelator.receivers.syslog.SyslogMessageSeverity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogReceiver" target="org.opennms.logcorrelator.receivers.syslog.SyslogMessageSeverity">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogReceiver" target="org.opennms.logcorrelator.receivers.syslog.SyslogMessageFacility">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424" target="org.opennms.logcorrelator.receivers.syslog.SyslogReceiver">
+      <point x="95.25" y="-15.0" />
+      <point x="661.25" y="255.0" />
+      <point x="731.5" y="255.0" />
+      <point x="0.0" y="115.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424" target="org.opennms.logcorrelator.receivers.syslog.rfc5424">
+      <point x="0.0" y="0.0" />
+      <point x="566.0" y="255.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.rfc5424" target="org.opennms.logcorrelator.receivers.syslog.SyslogParser">
+      <point x="-95.25" y="-15.0" />
+      <point x="469.6451219512195" y="238.42682926829272" />
+      <point x="113.23170731707313" y="239.5317073170732" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogReceiver" target="org.opennms.logcorrelator.receivers.syslog.SyslogServerPipelineFactory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogServerPipelineFactory" target="org.opennms.logcorrelator.receivers.syslog.SyslogParser">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogServerPipelineFactory" target="org.opennms.logcorrelator.receivers.syslog.SyslogServerDecoder">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.syslog.SyslogServerDecoder" target="org.opennms.logcorrelator.receivers.syslog.SyslogParser">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7764407853071564" x="682.5" y="368.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

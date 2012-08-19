@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-correlators-drools</OriginalElement>
+  <nodes>
+    <node x="178.25" y="240.0">mdl-opennms-logcorrelator-config</node>
+    <node x="164.84375" y="0.0">mdl-opennms-logcorrelator-correlators-drools</node>
+    <node x="188.75" y="160.0">mdl-opennms-logcorrelator-api</node>
+    <node x="0.0" y="80.0">mdl-opennms-logcorrelator-correlators-opennms</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-config">
+      <point x="107.66666666666669" y="15.0" />
+      <point x="434.0104166666667" y="55.0" />
+      <point x="420.25" y="55.0" />
+      <point x="420.25" y="215.0" />
+      <point x="379.9166666666667" y="215.0" />
+      <point x="80.66666666666669" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-opennms" target="mdl-opennms-logcorrelator-config">
+      <point x="-86.0" y="15.0" />
+      <point x="86.0" y="215.0" />
+      <point x="218.58333333333331" y="215.0" />
+      <point x="-80.66666666666669" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-opennms" target="mdl-opennms-logcorrelator-api">
+      <point x="86.0" y="15.0" />
+      <point x="258.0" y="135.0" />
+      <point x="244.0" y="135.0" />
+      <point x="-55.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-correlators-opennms">
+      <point x="-107.66666666666669" y="15.0" />
+      <point x="218.67708333333331" y="55.0" />
+      <point x="172.0" y="55.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-correlators-drools" target="mdl-opennms-logcorrelator-api">
+      <point x="0.0" y="15.0" />
+      <point x="326.34375" y="55.0" />
+      <point x="354.5" y="55.0" />
+      <point x="55.25" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="244.0" y="135.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-correlators-drools</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+

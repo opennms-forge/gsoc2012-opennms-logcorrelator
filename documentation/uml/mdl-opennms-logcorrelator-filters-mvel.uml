@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-filters-mvel</OriginalElement>
+  <nodes>
+    <node x="50.0" y="160.0">mdl-opennms-logcorrelator-config</node>
+    <node x="31.0" y="0.0">mdl-opennms-logcorrelator-filters-mvel</node>
+    <node x="0.0" y="80.0">mdl-opennms-logcorrelator-api</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-filters-mvel" target="mdl-opennms-logcorrelator-config">
+      <point x="70.0" y="15.0" />
+      <point x="241.0" y="55.0" />
+      <point x="231.5" y="55.0" />
+      <point x="60.5" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-filters-mvel" target="mdl-opennms-logcorrelator-api">
+      <point x="-70.0" y="15.0" />
+      <point x="101.0" y="55.0" />
+      <point x="110.5" y="55.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="-60.5" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="155.5" y="95.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-filters-mvel</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+

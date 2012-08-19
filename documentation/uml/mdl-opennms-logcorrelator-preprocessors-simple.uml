@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-preprocessors-simple</OriginalElement>
+  <nodes>
+    <node x="53.5" y="160.0">mdl-opennms-logcorrelator-config</node>
+    <node x="0.0" y="0.0">mdl-opennms-logcorrelator-preprocessors-simple</node>
+    <node x="3.5" y="80.0">mdl-opennms-logcorrelator-api</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-preprocessors-simple" target="mdl-opennms-logcorrelator-api">
+      <point x="-87.25" y="15.0" />
+      <point x="87.25" y="55.0" />
+      <point x="114.0" y="55.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-preprocessors-simple" target="mdl-opennms-logcorrelator-config">
+      <point x="87.25" y="15.0" />
+      <point x="261.75" y="55.0" />
+      <point x="235.0" y="55.0" />
+      <point x="60.5" y="-15.0" />
+    </edge>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="-60.5" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="174.5" y="95.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-preprocessors-simple</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+

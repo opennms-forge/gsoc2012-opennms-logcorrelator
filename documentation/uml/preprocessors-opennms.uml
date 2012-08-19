@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.preprocessors.opennms</OriginalElement>
+  <nodes>
+    <node x="0.0" y="473.0">org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifierFactory</node>
+    <node x="-62.0" y="-39.0">org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifier</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifierFactory" target="org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifier">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="180.0" y="243.0" />
+  <SelectedNodes>
+    <node>org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifier</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

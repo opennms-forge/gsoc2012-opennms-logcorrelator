@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.opennms.logcorrelator.receivers.flume</OriginalElement>
+  <nodes>
+    <node x="0.0" y="429.0">org.opennms.logcorrelator.receivers.flume.FlumeReceiverFactory</node>
+    <node x="-433.0" y="430.0">org.opennms.logcorrelator.receivers.flume.FlumeHeaders</node>
+    <node x="0.0" y="0.0">org.opennms.logcorrelator.receivers.flume.FlumeReceiver</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.opennms.logcorrelator.receivers.flume.FlumeReceiver" target="org.opennms.logcorrelator.receivers.flume.FlumeHeaders">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.opennms.logcorrelator.receivers.flume.FlumeReceiverFactory" target="org.opennms.logcorrelator.receivers.flume.FlumeReceiver">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="36.0" y="241.0" />
+  <SelectedNodes>
+    <node>org.opennms.logcorrelator.receivers.flume.FlumeHeaders</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

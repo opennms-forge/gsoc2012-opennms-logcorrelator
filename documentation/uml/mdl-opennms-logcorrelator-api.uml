@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MODULES</ID>
+  <OriginalElement>mdl-opennms-logcorrelator-api</OriginalElement>
+  <nodes>
+    <node x="0.0" y="80.0">mdl-opennms-logcorrelator-config</node>
+    <node x="10.5" y="0.0">mdl-opennms-logcorrelator-api</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mdl-opennms-logcorrelator-api" target="mdl-opennms-logcorrelator-config">
+      <point x="0.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="121.0" y="55.0" />
+  <SelectedNodes>
+    <node>mdl-opennms-logcorrelator-api</node>
+  </SelectedNodes>
+  <Categories />
+</Diagram>
+
