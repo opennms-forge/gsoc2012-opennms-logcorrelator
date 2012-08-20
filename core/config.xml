@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xmlns='http://xmlns.opennms.org/xsd/logcorrelator'
+  xsi:schemaLocation='http://xmlns.opennms.org/xsd/logcorrelator file:/home/fooker/Development/opennms.logcorrelator/config/target/generated-schema/schema1.xsd'>
+  
+  <receiver type="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiverFactory" id="syslog_udp">
+    <properties>
+      <property key="host">127.0.0.1</property>
+      <property key="port">5140</property>
+      <property key="protocoll">udp</property>
+    </properties>
+  </receiver>
+  
+  <receiver type="org.opennms.logcorrelator.receivers.syslog.rfc5424.Rfc5424SyslogReceiverFactory" id="syslog_tcp">
+    <properties>
+      <property key="host">0.0.0.0</property>
+      <property key="port">10514</property>
+      <property key="protocoll">tcp</property>
+    </properties>
+  </receiver>
+  
+  <receiver type="org.opennms.logcorrelator.receivers.flume.FlumeReceiverFactory" id="flume">
+    <properties>
+      <property key="host">0.0.0.0</property>
+      <property key="port">10000</property>
+    </properties>
+  </receiver>
+  
+  <preprocessor type="org.opennms.logcorrelator.preprocessors.opennms.NodeAssignmentTransmogrifierFactory" id="">
+    <properties>
+      <property key="baseUrl">http://opennms.opennms-edu.net/opennms</property>
+      <property key="username">admin</property>
+      <property key="password">opennms</property>
+      <property key="nodeCriteriaName">ipInterface.ipHostName</property>
+      <property key="messageValueName">host</property>
+    </properties>
+  </preprocessor>
+  
+  <preprocessor type="org.opennms.logcorrelator.preprocessors.simple.DropTransmogrifierFactory" id="drop_by_host">
+    <filters language="org.opennms.logcorrelator.filters.mvel.MvelFilterFactory">
+      <filter>node == null</filter>
+    </filters>
+  </preprocessor>
+  
+  <correlator type="org.opennms.logcorrelator.correlators.drools.DroolsCorrelatorFactory">
+    <properties>
+      <property key="url">file:test1.drl</property>
+      <property key="url">file:test2.drl</property>
+      <property key="url">file:test3.drl</property>
+    </properties>
+  </correlator>
+</config>
